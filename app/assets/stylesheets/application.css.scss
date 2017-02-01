@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 body {
   background-color: $body-bg;
   margin: $body-margin;
@@ -74,4 +78,80 @@ body {
   a {
   margin: 0 25px;
   }
+}
+
+.modal {
+  color: black;
+}
+
+.login-cont {
+  display: flex;
+
+  .login-unit-cont {
+    flex: 1;
+
+    .login-input {
+      width: 85%;
+      padding: 10px;
+      border: 0px;
+    }
+
+    .email-input {
+      border-bottom: 2px solid orange;
+    }
+
+    .password-input {
+      border-bottom: 2px solid red;
+    }
+  }
+}
+
+.login-submit {
+  font: inherit;
+  color: #000;
+  display: block;
+  width: 70%;
+  background-color: transparent;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+.social-cont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+@mixin social-button($iconurl) {
+  padding: 0;
+  border: 1px solid black;
+  font-family: inherit;
+  background-color: transparent;
+  color: #000;
+  font-size: inherit;
+  line-height: 40px;
+  width: 70%;
+  margin: 0 auto;
+  &:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    background-image: url($iconurl);
+    background-size: 100%;
+  }
+}
+
+.login-facebook {
+  @include social-button("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/1024px-F_icon.svg.png");
+  margin: 0px 0px 5px 0px;
+}
+
+.login-google {
+  @include social-button("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Google_plus_icon.svg/2000px-Google_plus_icon.svg.png");
+  margin: 5px 0;
 }
