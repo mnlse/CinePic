@@ -1,10 +1,13 @@
 class MainPagesController < ApplicationController
-  def index
+  def front_page
   end
 
-  def show
+  def discover_page
   end
 
-  def new
+  def learn_page
+  end
+
+  def discuss_page
   end
 end

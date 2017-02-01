@@ -18,11 +18,24 @@
       <div class="search-bar">
         <%= image_tag("search_icon.png", alt: "Search Icon", class: "search-icon") %>
       </div>
+      <div class="main-pages-nav">
+        <ul>
+          <%= nav_link "Front Page", front_page_path %>
+          <%= nav_link "Discover", discover_path %>
+          <%= nav_link "Learn", learn_path %>
+          <%= nav_link "Discuss", discuss_path %>
+        </ul>
+      </div>
     </div>
 
     <div class="nav-right-cont">
-      <%= link_to "Log In", "#login-modal", rel: "modal:open" %>
-      <%= link_to "Sign Up", "#signup-modal", rel: "modal:open" %>
+      <% if !user_signed_in? %>
+        <%= link_to "Log In", "#login-modal", rel: "modal:open" %>
+        <%= link_to "Sign Up", "#signup-modal", rel: "modal:open" %>
+      <% else %>
+        <%= link_to current_user.email, "#" %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% end %>
     </div>
   </nav>
   <div id="login-modal" class="modal" style="display: none; ">
