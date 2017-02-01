@@ -1,3 +1,6 @@
 == README
 
 Cinema website
+
+## TODO
+* Make the search icon .svg (for some reason it doesn't render)

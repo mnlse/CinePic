@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   style="enable-background:new"
+   version="1.1"
+   id="svg7471"
+   viewBox="0 0 858.36895 1166.4202"
+   height="329.1897mm"
+   width="242.25079mm">
+  <defs
+     id="defs7473">
+    <filter
+       id="filter8035"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8037"
+         in2="BackgroundImage"
+         mode="lighten" />
+    </filter>
+  </defs>
+  <g
+     transform="translate(836.95016,116.01656)"
+     style="filter:url(#filter8035)"
+     id="layer1">
+    <path
+       id="path8019"
+       d="M -452.85742,-113.35156 A 381.42856,381.42856 0 0 0 -834.28516,268.07617 381.42856,381.42856 0 0 0 -452.85742,649.50586 381.42856,381.42856 0 0 0 -71.427734,268.07617 381.42856,381.42856 0 0 0 -452.85742,-113.35156 Z m 0,95.048826 a 286.37839,286.37839 0 0 1 286.3789,286.378904 286.37839,286.37839 0 0 1 -286.3789,286.37891 286.37839,286.37839 0 0 1 -286.37891,-286.37891 286.37839,286.37839 0 0 1 286.37891,-286.378904 z"
+       style="fill:#000000;stroke:#000000;stroke-width:5.32999992;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:4.23883486;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M -247.73623,537.21588 18.523628,998.39148 -66.549528,1047.5085 -332.80939,586.33289 Z"
+       id="rect8042" />
+  </g>
+  <metadata
+     id="metadata3611">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'variables';
+@import 'reset';
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: $body-bg;
+  margin: $body-margin;
+  color: $body-fg;
+  font-family: $main-font;
+}
+
+.nav-top {
+  display: flex;
+  width: 100%;
+  font-size: $nav-font-size;
+  a {
+    color: white;
+  }
+  .logo {
+    width: $logo-width;
+  }
+}
+
+
+.search-bar {
+  background-color: $searchbar-bg;
+  color: $searchbar-fg;
+  padding: $searchbar-padding;
+    .search-icon {
+      height: $searchbar-height - (2 * $searchbar-padding);
+    }
+}
+
+
+.nav-left-cont {
+  flex: 2;
+  margin-left: 20px;
+}
+
+.nav-mid-cont {
+  flex: 4;
+}
+
+.nav-right-cont {
+  flex: 2;
+  height: $searchbar-height;
+  line-height: $searchbar-height;
+  text-align: right;
+  a {
+    margin: 0 20px;
+  }
+}

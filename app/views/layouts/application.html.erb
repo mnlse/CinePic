@@ -7,7 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="nav-top">
+    <div class="nav-left-cont">
+      <%= image_tag("logo_white.svg", alt: "CinePic Logo", class: :logo) %>
+    </div>
 
+    <div class="nav-mid-cont">
+      <div class="search-bar">
+        <%= image_tag("search_icon.png", alt: "Search Icon", class: "search-icon") %>
+      </div>
+    </div>
+
+    <div class="nav-right-cont">
+      <a href="">Login</a>
+      <a href="">Register</a>
+    </div>
+  </nav>
 <%= yield %>
 
 </body>
