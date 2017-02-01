@@ -4,6 +4,8 @@
   <title>CinePic</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'jquery.modal', media: 'all' %>
+  <%= javascript_include_tag 'jquery.modal' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,10 +21,21 @@
     </div>
 
     <div class="nav-right-cont">
-      <a href="">Login</a>
-      <a href="">Register</a>
+      <%= link_to "Log In", "#login-modal", rel: "modal:open" %>
+      <%= link_to "Sign Up", "#signup-modal", rel: "modal:open" %>
     </div>
   </nav>
+  <div id="login-modal" class="demo-description" style="display: none; ">
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+        <%= f.text_field :email %>
+        <%= f.password_field :password %>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+        <%= f.submit 'Sign in' %>
+        <%= link_to "Forgot your password?", new_password_path(:user) %>
+    <% end %>
+  </div>
+
 <%= yield %>
 
 </body>
