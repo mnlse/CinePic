@@ -155,3 +155,10 @@ body {
   @include social-button("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Google_plus_icon.svg/2000px-Google_plus_icon.svg.png");
   margin: 5px 0;
 }
+
+.shared-links {
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+  margin: 0 auto;
+}

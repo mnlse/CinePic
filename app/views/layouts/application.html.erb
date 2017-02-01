@@ -26,21 +26,7 @@
     </div>
   </nav>
   <div id="login-modal" class="modal" style="display: none; ">
-    <h3>Log In</h3>
-    <hr>
-    <%= form_for :user, url: user_session_path do |f| %>
-      <div class="login-cont">
-        <div class="login-unit-cont">
-          <%= f.label "e-mail" %>
-          <%= f.text_field :email, class: "login-input email-input" %>
-        </div>
-        <div class="login-unit-cont">
-          <%= f.label "password" %>
-          <%= f.password_field :password, class: "login-input password-input" %>
-        </div>
-      </div>
-      <%= f.submit nil, value: "Log In", class: "login-submit" %>
-    <% end %>
+    <%= render template: "devise/sessions/new" %>
     <div class="social-cont">
       <button class="login-facebook">
         Log In with Facebook
@@ -49,7 +35,13 @@
         Log In with Google+
       </button>
     </div>
+
   </div>
+
+  <div id="signup-modal" class="modal" style="display: none; ">
+    <%= render template: "devise/registrations/new" %>
+  </div>
+
 
 <%= yield %>
 
