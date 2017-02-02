@@ -16,6 +16,7 @@
 
 @import 'variables';
 @import 'reset';
+@import 'application_articles';
 
 a {
   text-decoration: none;
@@ -184,5 +185,9 @@ li.active {
   background-color: #dcdcdc;
   a {
     color: black;
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
+

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
-
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900');
 $body-bg: #000;
 $body-fg: #fff;
 $body-margin: 2.3%;
@@ -16,6 +15,9 @@ $searchbar-height: 50px;
 
 /* ------ END NAVBAR ------- */
 
-/* ------ BEGIN NAVBAR ------- */
+/* ------ BEGIN CONTENT ------- */
+
+$content-bg: #dcdcdc;
+$content-fg: #000;
 
 $main-font: 'Playfair Display'

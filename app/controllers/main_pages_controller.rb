@@ -1,5 +1,6 @@
 class MainPagesController < ApplicationController
   def front_page
+    @articles = Article.all
   end
 
   def discover_page
@@ -9,5 +10,8 @@ class MainPagesController < ApplicationController
   end
 
   def discuss_page
+  end
+
+  def articles
   end
 end

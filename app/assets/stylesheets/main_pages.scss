@@ -1,12 +1,26 @@
 // Place all the styles related to the Main_Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'variables';
+
 .content {
-  background-color: #dcdcdc;
+  background-color: $content-bg;
   width: 100%;
-  height: 100vh;
+  color: $content-fg;
 }
 
 .slideshow-image {
   width: 100%;
+}
+
+.main-page-header {
+  font-weight: 700;
+  font-size: 2.8em;
+  margin: 2% 0 0 1%;
+}
+
+.main-page-subheader {
+  font-weight: 700;
+  font-size: 2em;
 }
