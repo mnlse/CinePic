@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/discover', to: 'main_pages#discover_page'
   get '/learn', to: 'main_pages#learn_page'
   get '/discuss', to: 'main_pages#discuss_page'
-  root to: 'main_pages#front_page'
+  root to: redirect('/front_page') 
 end

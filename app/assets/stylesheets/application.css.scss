@@ -191,3 +191,26 @@ li.active {
   }
 }
 
+.article-cont {
+  &:first-of-type {
+    margin-top: 30px;
+  }
+
+  clear: both;
+  .article-thumbnail {
+    height: 250px;
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+  .article-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .article-content {
+    font-size: 18px;
+    margin-right: 100px;
+    word-spacing: 0.1px;
+    line-height: 1.2em;
+  }
+}
