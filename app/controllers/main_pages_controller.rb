@@ -1,6 +1,7 @@
 class MainPagesController < ApplicationController
   def front_page
     @articles = Article.all
+    @movies = Movie.all
   end
 
   def discover_page

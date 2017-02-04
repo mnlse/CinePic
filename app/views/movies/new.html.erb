@@ -1,0 +1,32 @@
+<h1>Create a new movie</h1>
+<%= form_for @movie do |f| %>
+  <div class="inputfield">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="inputfield">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="inputfield">
+    <%= f.label :actors %>
+    <%= f.text_field :actors %>
+  </div>
+  <div class="inputfield">
+    <%= f.label :genres %>
+    <%= f.text_field :genres %>
+  </div>
+  <div class="inputfield">
+    <%= f.label :writers %>
+    <%= f.text_field :writers %>
+  </div>
+  <div class="inputfield">
+    <%= f.label :runtime %>
+    <%= f.number_field :runtime %>
+  </div>
+  <div class="inputfield">
+    <%= f.label :director %>
+    <%= f.text_field :director %>
+  </div>
+  <%= f.submit %>
+<% end %>
