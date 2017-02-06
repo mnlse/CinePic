@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206045957) do
+ActiveRecord::Schema.define(version: 20170206050903) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20170206045957) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "movies", force: :cascade do |t|

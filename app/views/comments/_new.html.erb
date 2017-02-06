@@ -1,0 +1,5 @@
+<p>New comment</p>
+<%= form_for [@article, @new_comment] do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>

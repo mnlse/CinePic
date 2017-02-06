@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
+
   resources :movies
   get '/front_page', to: 'main_pages#front_page'
   get '/discover', to: 'main_pages#discover_page'
