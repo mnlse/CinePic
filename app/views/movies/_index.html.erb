@@ -1,14 +1,13 @@
 <% @movies.each do |movie| %>
   <div class="movie-cont">
+    <%= link_to(image_tag(movie.cover_img.url(:front_page), class: "movie-cover-img"), movie_path(movie)) %>
     <h4 class="movie-title"><%= link_to movie.title, movie_path(movie) %></h4>
-    <p class="movie-description"><%= truncate(movie.description, length: 800) %></p>
+    <p class="movie-description"><%= truncate(movie.description, length: 700) %></p>
     <%= link_to 'Show', movie %>
 
-    <% if current_user && current_user.id == movie.author %>
-      <%= link_to 'Edit', edit_movie_path(movie) %>
-      <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>    
+    <%= link_to 'Edit', edit_movie_path(movie) %>
+    <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 <% end %>
 
 <%= link_to 'New movie', new_movie_path %>

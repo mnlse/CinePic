@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :find_movie, only: [:destroy, :show, :edit]
+
   def index
     @movies = Movie.all
   end
@@ -18,16 +20,19 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
   end
 
   def destroy
-    @movie = Movie.destroy(params[:id])
+    @movie.destroy
     redirect_to 'index'
   end
 
   private
+  def find_movie
+    @movie = Movie.find(params[:id])
+  end
+
   def movie_params
-    params.require(:movie).permit(:title, :description, :actors, :genres, :writers, :runtime, :director)
+    params.require(:movie).permit(:title, :description, :cover_img, :actors, :genres, :writers, :runtime, :director)
   end
 end

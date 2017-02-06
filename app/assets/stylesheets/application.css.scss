@@ -21,6 +21,11 @@
 
 a {
   text-decoration: none;
+  color: black;
+  &:hover {
+    background-color: transparent;
+    color: black;
+  }
 }
 
 h3 {
@@ -210,6 +215,27 @@ li.active {
   }
   .article-content {
     font-size: 18px;
+    margin-right: 100px;
+    word-spacing: 0.1px;
+    line-height: 1.2em;
+  }
+}
+.movie-cont {
+  &:first-of-type {
+    margin-top: 30px;
+  }
+
+  clear: both;
+  .movie-cover-img {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+  .movie-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .movie-description {
     margin-right: 100px;
     word-spacing: 0.1px;
     line-height: 1.2em;

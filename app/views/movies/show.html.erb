@@ -1,2 +1,21 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<div class="content">
+  <h3><%= @movie.title %></h3>
+  <p><%= @movie.description %></p>
+  
+  <%= image_tag(@movie.cover_img.url(:front_page)) %>
+  <p>
+    Runtime: <%= @movie.runtime %>
+  <p>
+
+  <p>
+    Genres: <%= @movie.genres %>
+  </p>
+
+  <p>
+    Director: <%= @movie.director %>
+  </p>
+
+  <p>
+    Actors: <%= @movie.actors %>
+  </p>
+</div>

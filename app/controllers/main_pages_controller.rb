@@ -2,6 +2,7 @@ class MainPagesController < ApplicationController
   def front_page
     @articles = Article.all
     @movies = Movie.all
+    @trivium = Trivium.first
   end
 
   def discover_page
