@@ -1,5 +1,7 @@
-<p>New comment</p>
-<%= form_for [@article, @new_comment] do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-<% end %>
+<div class="new-comment-cont">
+  <p>New comment</p>
+  <%= form_for [@article, @new_comment] do |f| %>
+    <%= f.text_area :content, class: "new-comment-input" %>
+    <%= f.submit nil, class: "new-comment-submit" %>
+  <% end %>
+</div>
