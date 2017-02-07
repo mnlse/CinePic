@@ -1,4 +1,6 @@
-<%= @comments.each do |comment| %>
-  <p><%= comment.content %></p>
-  <hr>
+<% @comments.each do |comment| %>
+  <div class="comment-cont">
+    <p><%= comment.content %></p>
+    <p><%= get_user(comment).email %></p>
+  </div>
 <% end %>

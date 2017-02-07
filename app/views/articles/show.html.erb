@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <div class="content">
-  <h1>
-    <%= @article.title %>
-  </h1>
-  <p>
-    <strong>Author:</strong>
-    <%= @author %>
-  </p>
+  <%= image_tag @article.thumbnail(:front_page), class: "article-show-img" %>
+  <div class="article-head">
+    <h1 class="article-title">
+      <%= @article.title %>
+    </h1>
+    
+    
+    <p class="article-author">
+      <strong>Author:</strong>
+      <%= @author %>
+    </p>
+  </div>
   
-  <p>
+  <p class="article-content">
     <%= @article.content %>
   </p>
   
