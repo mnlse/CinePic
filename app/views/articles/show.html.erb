@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <div class="content">
-  <%= image_tag @article.thumbnail(:front_page), class: "article-show-img" %>
   <div class="article-head">
     <h1 class="article-title">
       <%= @article.title %>
@@ -15,7 +14,7 @@
   </div>
   
   <p class="article-content">
-    <%= @article.content %>
+    <%= @article.content.html_safe %>
   </p>
   
   
@@ -24,7 +23,7 @@
     <%= @article.approved %>
   </p>
   
-  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Edit', edit_article_path(@article), 'data-no-turbolink': true %> |
   <%= link_to 'Back', articles_path %>
 
   <h2>Comments</h2>

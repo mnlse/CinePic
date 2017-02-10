@@ -2,11 +2,11 @@
   <div class="article-cont">
     <%= link_to(image_tag(article.thumbnail.url(:front_page), class: "article-thumbnail"), article_path(article)) %>
     <h4 class="article-title"><%= link_to article.title, article_path(article) %></h4>
-    <p class="article-content"><%= truncate(article.content, length: 800) %></p>
+    <p class="article-content"><%= truncate(sanitize(article.content, tags: []), length: 800) %></p>
     <%= link_to 'Show', article %>
 
     <% if current_user && current_user.id == article.author %>
-      <%= link_to 'Edit', edit_article_path(article) %>
+      <%= link_to 'Edit', edit_article_path(article), 'data-no-turbolink': true %>
       <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>    

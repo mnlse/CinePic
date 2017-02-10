@@ -1,9 +1,11 @@
+<%= tinymce_assets %>
+<%= tinymce %>
 <%= simple_form_for(@article) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :content %>
+    <%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 %>
     <%= f.input :author %>
     <%= f.input :approved %>
     <%= f.file_field :thumbnail %>

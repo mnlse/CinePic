@@ -26,8 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
-gem "wysiwyg-rails"
 gem "font-awesome-rails"
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 
 # Use ActiveModel has_secure_password
