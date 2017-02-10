@@ -1,2 +1,57 @@
 .user-profile-img-big {
 }
+
+.user-show-content {
+  display: flex;
+}
+.user-show-name {
+  display: inline-block;
+}
+
+.user-show-headline {
+  clear: right;
+}
+
+.user-show-username {
+  display: inline-block;
+}
+
+.user-show-sidebar {
+  width: 150px;
+  height: 100vh;
+}
+
+.send-friend-request {
+  padding: 1%;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.user-show-text {
+  .user-header {
+    padding: 1%;
+  }
+}
+
+.user-show-nav {
+  clear: both;
+  width: 100%;
+  a {
+    color: white;
+    &:hover {
+      color: #bcbcbc;
+    }
+  }
+  ul {
+    background-color: black;
+    color: white;
+    display: flex;
+    text-align: center;
+    padding: 1% 0;
+    a {
+      flex: 1;
+      &.active {
+      }
+    }
+  }
+}

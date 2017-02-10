@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @author = User.find(@article.author).email
+    @author = User.find(@article.author)
     @comments = Comment.where(article_id: @article.id)
     @new_comment = Comment.new
   end

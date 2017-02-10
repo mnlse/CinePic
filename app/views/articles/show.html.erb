@@ -4,7 +4,7 @@
   <div class="article-head">
     <h1 class="article-title">
       <%= @article.title %>
-      <sub class="sub-author"> <%= @author %> </sub>
+      <sub class="sub-author"> <%= @author.first_name + " " + @author.last_name %> </sub>
     </h1>
   </div>
   

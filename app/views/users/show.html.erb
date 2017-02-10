@@ -1,12 +1,44 @@
 <div class="content">
-  <h1>Profile information</h1>
-  <hr>
-  <%= image_tag @user.avatar.url(:big), class: "user-profile-img-big" %>
-  <p>Username: <%= @user.username %></p> 
-  <p>Email address: <%= @user.email %></p>
-  <p>Bio: <%= @user.bio %></p>
-  <p>First name: <%= @user.first_name %></p>
-  <p>Last name: <%= @user.last_name %></p>
-  <p>Created at: <%= @user.created_at.to_s(:long_ordinal) %></p>
-  <%= link_to "Edit", edit_user_registration_path %>
+  <div class="user-show-content">
+    <div class="user-show-sidebar">
+      <%= image_tag @user.avatar.url(:big), class: "user-profile-img-big" %>
+      <%= link_to "Send friend request", "#", class: "send-friend-request" %>
+      <h3>Friends</h3>
+      <hr>
+    </div>
+    <div class="user-show-text">
+      <div class="user-header">
+        <h2 class="user-show-name"><%= @user.first_name + " " + @user.last_name %></h2>
+        <h3 class="user-show-username">(<%= @user.username %>)</h3>
+      </div>
+      <nav class="user-show-nav">
+        <ul>
+          <a href="" class="active">
+            <li>Profile</li>
+          </a>
+          <a href="">
+            <li>Movies</li>
+          </a>
+          <a href="">
+            <li>Articles</li>
+          </a>
+          <a href="">
+            <li>Favorite people</li>
+          </a>
+          <a href="">
+            <li>Forums</li>
+          </a>
+          <a href="">
+            <li>Comments</li>
+          </a>
+        </ul>
+      </nav>
+      <p><%= @user.bio %></p>
+      <p>Email address: <%= @user.email %></p>
+      <p>First name: <%= @user.first_name %></p>
+      <p>Last name: <%= @user.last_name %></p>
+      <p>Created at: <%= @user.created_at.to_s(:long_ordinal) %></p>
+    </div>
+    <%= link_to "Edit", edit_user_registration_path %>
+  </div>
 </div>
