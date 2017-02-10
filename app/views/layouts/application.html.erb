@@ -33,7 +33,7 @@
         <%= link_to "Log In", "#login-modal", rel: "modal:open" %>
         <%= link_to "Sign Up", "#signup-modal", rel: "modal:open" %>
       <% else %>
-        <%= link_to current_user.email, "#" %>
+        <%= link_to current_user.email, users_path(current_user) %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       <% end %>
     </div>

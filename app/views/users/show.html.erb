@@ -1,6 +1,12 @@
 <div class="content">
   <h1>Profile information</h1>
   <hr>
+  <%= image_tag @user.avatar.url(:big), class: "user-profile-img-big" %>
+  <p>Username: <%= @user.username %></p> 
   <p>Email address: <%= @user.email %></p>
-  <p>Created at: <%= @user.created_at %>
+  <p>Bio: <%= @user.bio %></p>
+  <p>First name: <%= @user.first_name %></p>
+  <p>Last name: <%= @user.last_name %></p>
+  <p>Created at: <%= @user.created_at.to_s(:long_ordinal) %></p>
+  <%= link_to "Edit", edit_user_registration_path %>
 </div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'users/:id', to: 'users#show'
-
+  get 'users/:id', to: 'users#show', as: :users
+  patch 'users/:id', to: 'users#edit', as: :user
   resources :articles do
     resources :comments
   end
