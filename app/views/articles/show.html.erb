@@ -4,6 +4,7 @@
   <div class="article-head">
     <h1 class="article-title">
       <%= @article.title %>
+      <sub>test</sub>
     </h1>
     
     
@@ -13,10 +14,9 @@
     </p>
   </div>
   
-  <p class="article-content">
+  <div class="article-show-content">
     <%= @article.content.html_safe %>
-  </p>
-  
+  </div>
   
   <p>
     <strong>Approved:</strong>

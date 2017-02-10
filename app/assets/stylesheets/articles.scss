@@ -10,5 +10,10 @@
   display: inline-block;
 }
 
-.article-content {
+.article-show-content {
+  padding: 3% 5%;
+  line-height: 1.3em;
+  p {
+    margin: 1% 0;
+  }
 }

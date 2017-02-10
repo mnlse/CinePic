@@ -1,7 +1,12 @@
 toolbar:
   - styleselect | bold italic | undo redo
-  - image | link
+  - undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image
+  - table 
 plugins:
   - image
   - link
-  - media
+  - table
+  - advlist autolink lists link image charmap print preview hr anchor pagebreak
+  - searchreplace wordcount visualblocks visualchars code fullscreen
+  - insertdatetime media nonbreaking save table contextmenu directionality
+  - emoticons template paste textcolor colorpicker textpattern imagetools codesample toc
