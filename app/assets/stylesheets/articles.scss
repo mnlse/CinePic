@@ -17,3 +17,21 @@
     margin: 1% 0;
   }
 }
+
+.article-head {
+  margin-left: 2%;
+}
+
+.sub-author {
+  font-size: 35%;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.form-inputs {
+  font-size: 1.3em;
+
+  input#article_title {
+    width: 30%;
+  }
+}
