@@ -1,5 +1,18 @@
-<div class="content">
-  <h3><%= @movie.title %></h3>
+<div class="content movie-show-content">
+  <div class="movie-head-cont">
+    <h1><%= @movie.title %></h1>
+    <div class="movie-info-cont">
+      <span>1942</span>
+      <span>1h 42min</span>
+      <span>Drama, Romance, War</span>
+      <span>23 January 1943 (USA)</span>
+      <span class="rating">
+        <span class="rating-current">4.3</span>/<span class="rating-max">5</span>
+      </span>
+      <span class="rate-movie-action">Rate this</span>
+    </div>
+  </div>
+  <hr>
   <p><%= @movie.description %></p>
   
   <%= image_tag(@movie.cover_img.url(:front_page)) %>
