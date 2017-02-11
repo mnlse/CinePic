@@ -1,4 +1,9 @@
-$(function(){                   // Start when document ready
+function ready(){                   // Start when document ready
     $('#star-rating').rating(); // Call the rating plugin
-    console.log("OK");
-}); 
+    $('.rate-movie-btn').click(function() {
+      $('.rate-movie-dropdown').toggleClass("hidden");
+    });
+}; 
+
+$(document).ready(ready)
+$(document).on("page:load", ready);
