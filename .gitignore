@@ -6,6 +6,7 @@
 #
 **/*.swp
 **/*.swo
+/public/system/*
 
 # Ignore bundler config.
 /.bundle
