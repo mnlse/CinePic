@@ -16,3 +16,21 @@
   font-size: 2em;
   }
 }
+.rate-movie-dropdown {
+  position: absolute;
+  background-color: #272836;
+  margin-left: -10%;
+}
+
+.rate-movie-func {
+
+}
+
+.rate-movie-description {
+  textarea {
+    border: 1px solid #202136;
+    background-color: #202136;
+    color: white;
+    font-family: sans-serif;
+  }
+}

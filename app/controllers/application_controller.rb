@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
   def set_removed_user
     @removed_user = User.new
     @removed_user.username = "removed"
-    @removed_user.first_name = "-"
-    @removed_user.last_name = "-"
+    @removed_user.first_name = ""
+    @removed_user.last_name = ""
     @removed_user.bio = "User has been removed."
     @removed_user.email = "-"
   end
