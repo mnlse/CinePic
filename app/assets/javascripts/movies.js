@@ -1,4 +1,5 @@
 function ready(){
+    $.star_rating()
     $('.rate-movie-btn').click(function() {
       $('.rate-movie-dropdown').toggleClass("hidden");
       $('.star-img').toggleClass("hidden");

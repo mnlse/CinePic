@@ -1,0 +1,13 @@
+.star-border-only {
+  background-image: url('star_border_only.svg');
+  background-size: 40px 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  float: left;
+}
+
+.star-filled {
+  background-image: url('star_filled.svg');
+}
