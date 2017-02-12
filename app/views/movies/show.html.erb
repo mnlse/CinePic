@@ -10,31 +10,38 @@
         <span class="rating-current">9.2</span>/<span class="rating-max">10</span>
       </span>
       <div class="rate-movie-func">
-        <button class="rate-movie-btn">Rate this</button>
-        <div class="rate-movie-dropdown hidden">
-          <div id="star-rating">
-            <input type="radio" name="example" class="rating" value="1" />
-            <input type="radio" name="example" class="rating" value="2" />
-            <input type="radio" name="example" class="rating" value="3" />
-            <input type="radio" name="example" class="rating" value="4" />
-            <input type="radio" name="example" class="rating" value="5" />
-            <input type="radio" name="example" class="rating" value="6" />
-            <input type="radio" name="example" class="rating" value="7" />
-            <input type="radio" name="example" class="rating" value="8" />
-            <input type="radio" name="example" class="rating" value="9" />
-            <input type="radio" name="example" class="rating" value="10" />
-          </div>
-          <div class="rate-movie-description">
-            <textarea id="" name="" cols="30" rows="10"></textarea>
-          </div>
-        </div>
+        <button class="rate-movie-btn">
+          <%= image_tag "star_filled.svg", class: "star-img hidden" %> <!-- filled star (is visible when btn is clicked) -->
+          <%= image_tag "star_border_only.svg", class: "star-img" %> Rate this
+        </button>
       </div>
     </div>
   </div>
   <hr>
+  <div class="rate-movie-dropdown hidden">
+    <%= image_tag("user_default_round_avatar.svg", alt: "user avatar", class: "user-round-avatar") %>
+    <p class="rating-text">I have seen the movie. <br>
+    I rate it as:</p>
+    <div id="star-rating">
+      <input type="radio" name="example" class="rating" value="1" />
+      <input type="radio" name="example" class="rating" value="2" />
+      <input type="radio" name="example" class="rating" value="3" />
+      <input type="radio" name="example" class="rating" value="4" />
+      <input type="radio" name="example" class="rating" value="5" />
+      <input type="radio" name="example" class="rating" value="6" />
+      <input type="radio" name="example" class="rating" value="7" />
+      <input type="radio" name="example" class="rating" value="8" />
+      <input type="radio" name="example" class="rating" value="9" />
+      <input type="radio" name="example" class="rating" value="10" />
+    </div>
+    <div class="rate-movie-description">
+      <textarea id=""></textarea>
+    </div>
+  </div>
   <p><%= @movie.description %></p>
   
-  <%= image_tag(@movie.cover_img.url(:front_page)) %>
+  <%= image_tag(@movie.cover_img.url(:show_page)) %>
+  <%= raw(youtube_embed(@movie.yt_trailer_url)) %>
   <p>
     Runtime: <%= @movie.runtime %>
   <p>

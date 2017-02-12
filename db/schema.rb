@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210092040) do
+ActiveRecord::Schema.define(version: 20170211150137) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20170210092040) do
     t.string   "cover_img_content_type"
     t.integer  "cover_img_file_size"
     t.datetime "cover_img_updated_at"
+    t.integer  "ratingcounter"
+    t.integer  "avgrating"
+    t.string   "yt_trailer_url"
   end
 
   create_table "trivia", force: :cascade do |t|
