@@ -48,6 +48,32 @@
   }
 }
 
+.rating-dropdown-btns {
+  width: 100%;
+  display: flex;
+  margin-top: 2%;
+  .btn {
+    flex: 1;
+    height: 9vh;
+    font-family: inherit;
+    font-size: 1em;
+    border: 0;
+  }
+  .rating-save {
+    background-color: #efce48;
+  }
+
+  .rating-cancel {
+    background-color: #ff5555;
+  }
+}
+
+#star-rating {
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-around;
+}
+
 .hidden {
   display: none;
 }
@@ -61,6 +87,9 @@
 
 .rate-movie-description {
   textarea {
+    border: 0;
+    resize: none;
+    height: 30vh;
     width: 100%;
     background-color: #e7e7e7;
     font-family: sans-serif;
