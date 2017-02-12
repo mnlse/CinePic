@@ -1,5 +1,4 @@
-function ready(){                   // Start when document ready
-    $('#star-rating').rating(); // Call the rating plugin
+function ready(){
     $('.rate-movie-btn').click(function() {
       $('.rate-movie-dropdown').toggleClass("hidden");
       $('.star-img').toggleClass("hidden");

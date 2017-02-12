@@ -32,8 +32,19 @@
   width: 25%;
   padding: 1%;
   background-color: #bababa;
-  p.rating-text {
+  p.rating-helper-text {
     text-align: center;
+    margin-top: 2%;
+  }
+  p.rating-responsive {
+    text-align: center;
+    .rating-num {
+      font-size: 2em;
+    }
+    .rating-description {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
   }
 }
 

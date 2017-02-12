@@ -20,8 +20,11 @@
   <hr>
   <div class="rate-movie-dropdown hidden">
     <%= image_tag("user_default_round_avatar.svg", alt: "user avatar", class: "user-round-avatar") %>
-    <p class="rating-text">I have seen the movie. <br>
+    <p class="rating-helper-text">I have seen the movie. <br>
     I rate it as:</p>
+    <p class="rating-responsive">
+      <span class="rating-num">5</span> <span class="rating-description">(average)</span>
+    </p>
     <div id="star-rating">
       <input type="radio" name="example" class="rating" value="1" />
       <input type="radio" name="example" class="rating" value="2" />
