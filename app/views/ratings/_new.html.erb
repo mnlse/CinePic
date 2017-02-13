@@ -10,11 +10,11 @@ I rate it as:</p>
       <%= f.radio_button :rating, value, id: "rt" + value.to_s, class: :rating %>
     <% end %> <br>
   </div>
-  <p class="thoughts-text">Thoughts:</p>
-  <div class="rate-movie-description">
+  <div class="thoughts-cont hidden">
+    <p class="thoughts-text">Thoughts:</p>
     <%= f.text_area :thoughts %>
   </div>
-  <div class="rating-dropdown-btns">
+  <div class="rating-dropdown-btns hidden">
     <%= f.submit nil, class: "rating-save btn", value: "Save" %>
     <input class="rating-cancel btn" type="button" value="Cancel">
   </div>

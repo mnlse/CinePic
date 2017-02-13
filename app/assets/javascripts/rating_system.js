@@ -12,35 +12,98 @@ $.rating_system = function() {
     10: "masterpiece"
   };
 
-  var highlightStar = function(number) {
-
+  var sel = {
+    dropdown: '.rate-movie-dropdown',
+    cont: '#star-rating',
+    star: 'label.star-border-only',
+    radio: 'input.rating',
+    num: '.rating-num',
+    desc: '.rating-description',
+    thoughts: '.thoughts-cont',
+    btns: '.rating-dropdown-btns',
+    saveBtn: '.rating-save',
+    cancelBtn: '.rating-cancel'
   }
 
-  $('input.rating').each(function() {
-    elemID = $(this).attr("id");
-    label = $('<label class="star-border-only">');
+  var clickedRating = null;
+  var initialRating = null;
+  var bottomShown = false;
+
+  // Highlights a star
+  var addHL = function(number) {
+    var hs = $(`${sel.cont} ${sel.star}`).eq(number - 1);
+    hs.addClass('star-filled');
+    hs.prevAll(sel.star).addClass('star-filled');
+    hs.nextAll(sel.star).removeClass('star-filled');
+    $(sel.num).text(number);
+    $(sel.desc).text("(" + ratingDesc[number] + ")");
+  };
+
+  // Clears all highlights
+  var clearHL = function() {
+    $(sel.star).removeClass('star-filled');
+  };
+
+  // Hides textarea input, "thoughts" label
+  var bottom = function(action) {
+    if(action === "show" && bottomShown === false) {
+      $(sel.thoughts).removeClass("hidden");
+      $(sel.btns).removeClass("hidden");
+      bottomShown = !bottomShown;
+    } else if(action === "hide" && bottomShown === true) {
+      $(sel.thoughts).addClass("hidden");
+      $(sel.btns).addClass("hidden");
+      bottomShown = !bottomShown;
+    }
+  };
+
+  // Initializes the program, adds stars in place of radio inputs
+  var init = function() {
+    $('input.rating').each(function() {
+    var elemID = $(this).attr("id");
+    var label = $('<label class="star-border-only">');
     label.attr("for", elemID);
     $(this).before(label);
-  });
-  $('input.rating').hide();
-
-  $('input.rating').each(function() {
-    checked = $(this).attr('checked');
+    var checked = $(this).attr("checked");
     if(checked) {
-      console.log('FOUND');
+      var rating = $(this).attr("value");
+      addHL(rating);
+      clickedRating = rating;
+      initialRating = rating;
+      bottom("show");
     }
-  });
+    });
+    $(sel.radio).hide();
+  }
 
-  $('label.star-border-only').hover(function() {
-    $(this).addClass('star-filled');
-    $(this).prevAll('label.star-border-only').addClass('star-filled');
-    $(this).nextAll('label.star-border-only').removeClass('star-filled');
-    ratingVal = $(this).next().attr("value");
-    $('.rating-num').text(ratingVal);
-    $('.rating-description').text("(" + ratingDesc[ratingVal] + ")");
+  init();
+
+  // Event listeners:
+  $(sel.star).hover(function() {
+    var val = $(this).next().attr("value");
+    addHL(val);
+    $(this).click(function() {
+      clickedRating = val;
+      bottom("show");
+    });
   });
 
   $('#star-rating').mouseout(function() {
-    $('label.star-border-only').removeClass('star-filled');
+    if(clickedRating) {
+      addHL(clickedRating);
+    } else {
+      $('label.star-border-only').removeClass('star-filled');
+    }
+  });
+
+  $(sel.cancelBtn).click(function() {
+    $(sel.dropdown).toggleClass("hidden");
+    if(initialRating) {
+      clearHL();
+      addHL(initialRating);
+    } else {
+      bottom("hide");
+      clearHL();
+    }
   });
 }
