@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :movies
+  resources :movies do
+    resources :ratings
+  end
   get '/front_page', to: 'main_pages#front_page'
   get '/discover', to: 'main_pages#discover_page'
   get '/learn', to: 'main_pages#learn_page'

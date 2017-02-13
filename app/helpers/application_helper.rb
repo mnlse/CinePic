@@ -11,7 +11,8 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  def youtube_embed(youtube_url)
+  def youtube_embed(youtube_url, no_controls)
+    no_controls ||= false
     if youtube_url[/youtu\.be\/([^\?]*)/]
       youtube_id = $1
     else
@@ -19,7 +20,7 @@ module ApplicationHelper
       youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
       youtube_id = $5
     end
-    %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+    %Q{<iframe title="YouTube video player" class="ytvid" src="http://www.youtube.com/embed/#{ youtube_id }#{ '?autoplay=0&showinfo=0&controls=0' if no_controls}" frameborder="0" fs="1" allowfullscreen></iframe>}
   end
 
   def nav_link(link_text, link_path)

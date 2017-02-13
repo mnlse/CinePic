@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :find_movie, only: [:destroy, :show, :edit]
+  before_action :find_movie, only: [:destroy, :show, :edit, :update]
 
   def index
     @movies = Movie.all
@@ -20,6 +20,27 @@ class MoviesController < ApplicationController
   end
 
   def show
+    if !current_user.nil?
+      @rating = Rating.where(user_id: current_user.id, movie_id: @movie.id).first
+      if @rating.nil?
+        @rating = Rating.new
+        @rating.thoughts = "new"
+      end
+    else
+      @rating = Rating.new
+      @rating.thoughts = "not logged in"
+    end
+  end
+
+  def edit
+  end
+  
+  def update
+    if @movie.update(movie_params)
+      redirect_to @movie
+    else
+      render 'edit'
+    end
   end
 
   def destroy

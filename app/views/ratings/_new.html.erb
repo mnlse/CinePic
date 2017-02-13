@@ -1,0 +1,21 @@
+<%= image_tag("user_default_round_avatar.svg", alt: "user avatar", class: "user-round-avatar") %>
+<p class="rating-helper-text">I have seen the movie. <br>
+I rate it as:</p>
+<p class="rating-responsive">
+  <span class="rating-num"></span> <span class="rating-description">not rated</span>
+</p>
+<%= form_for [@movie, @rating] do |f| %>
+  <div id="star-rating">
+    <% (1..10).each do |value| %>
+      <%= f.radio_button :rating, value, id: "rt" + value.to_s, class: :rating %>
+    <% end %> <br>
+  </div>
+  <p class="thoughts-text">Thoughts:</p>
+  <div class="rate-movie-description">
+    <%= f.text_area :thoughts %>
+  </div>
+  <div class="rating-dropdown-btns">
+    <%= f.submit nil, class: "rating-save btn", value: "Save" %>
+    <input class="rating-cancel btn" type="button" value="Cancel">
+  </div>
+<% end %>
