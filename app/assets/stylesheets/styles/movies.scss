@@ -40,6 +40,7 @@
 
   .leftcol {
     flex: 63;
+    padding: 0 1%;
   }
 
   .rightcol {
@@ -51,7 +52,6 @@
   width: 100%;
   background-color: #dcdcdc;
   height: 280px;
-  padding: 0 1%;
   iframe {
     height: 100%;
     width: 600px;
@@ -75,7 +75,30 @@
 }
 
 .movie-description {
-  padding: 0 1%;
+  padding: 1%;
+  text-align: justify;
+  line-height: 1.1em;
+  margin-top: 1%;
+}
+
+.movie-details {
+  margin: 1% 0;
+  p {
+    line-height: 1.2em;
+  }
+}
+.movie-trivia {
+  margin: 1% 0;
+  a {
+    color: blue;
+  }
+}
+
+.movie-faq {
+  margin: 1% 0;
+  background-color: #c6c6c6;
+  padding: 3%;
+  line-height: 1.5em;
 }
 
 .rating {
