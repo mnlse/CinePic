@@ -21,71 +21,92 @@
   <div class="rate-movie-dropdown hidden">
     <%= render 'ratings/form' %>
   </div>
-  <div class="leftcol">
-    <div class="movie-media">
-      <%= image_tag(@movie.cover_img.url(:show_page)) %>
-      <%= raw(youtube_embed(@movie.yt_trailer_url, false)) %>
-    </div>
-    <div class="movie-description"><%= @movie.description %></div>
-  </div>
-  <div class="rightcol">
-    <div class="movie-info">
-      <h3>Creators:</h3>
-      <hr>
-      <div class="movie-creators">
-        <div class="creator">
-          <img src="http://placehold.it/70x70" alt=""><span>Director:<br>Michael Curtiz</span>
-        </div>
-        <div class="creator">
-          <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Julius J. Epstein</span>
-        </div>
-        <div class="creator">
-          <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
-        </div>
-        <div class="creator">
-          <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
-        </div>
-        <div class="creator">
-          <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
-        </div>
-        <div class="creator">
-          <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
-        </div>
+  <div class="row">
+    <div class="leftcol">
+      <div class="movie-media">
+        <%= image_tag(@movie.cover_img.url(:show_page)) %>
+        <%= raw(youtube_embed(@movie.yt_trailer_url, false)) %>
       </div>
-      <h3>Cast:</h3>
-      <table>
+      <div class="movie-description"><%= @movie.description %></div>
+      <div class="movie-details">
+        <h3>Details:</h3>
+        <hr>
+        <p>Official Sites: <a href="#">Facebook</a> | <a href="#">Google+</a><p>
+        <p>Also known as: Everybody Comes to Rick's</p>
+        <p>Budget: $950,000 (estimated)</p>
+        <p>
+          Runtime: <%= @movie.runtime %> minutes
+        <p>
+        
+        <p>
+          Genres: <%= @movie.genres %>
+        </p>
+        
+        <p>
+          Director: <%= @movie.director %>
+        </p>
+        
+        <p>
+          Actors: <%= @movie.actors %>
+        </p>
+      </div>
+      <div class="movie-trivia">
+        <h3>Did you know?</h3>
+        <hr>
+      </div>
+      <div class="movie-faq">
+        <h3>Frequently asked questions</h3>
+        <hr>
+      </div>
+      <div class="movie-reviews">
+        <h3>User Reviews</h3>
+        <hr>
+      </div>
+    </div>
+    <div class="rightcol">
+      <div class="movie-info">
+        <h3>Creators:</h3>
+        <hr>
+        <div class="movie-creators">
+          <div class="creator">
+            <img src="http://placehold.it/70x70" alt=""><span>Director:<br>Michael Curtiz</span>
+          </div>
+          <div class="creator">
+            <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Julius J. Epstein</span>
+          </div>
+          <div class="creator">
+            <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
+          </div>
+          <div class="creator">
+            <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
+          </div>
+          <div class="creator">
+            <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
+          </div>
+          <div class="creator">
+            <img src="http://placehold.it/70x70" alt=""><span>Writer:<br>Philip J. Epstein</span>
+          </div>
+        </div>
+        <h3>Cast:</h3>
+        <table>
+          <tr>
+            <td>
+              <div class="creator">
+                <img src="http://placehold.it/50x50" alt=""><span>Writer:<br>Philip J. Epstein</span>
+              </div>
+            </td>
+            <td>Jim</td>
+          </tr>
         <tr>
           <td>
             <div class="creator">
               <img src="http://placehold.it/50x50" alt=""><span>Writer:<br>Philip J. Epstein</span>
             </div>
           </td>
-          <td>Jim</td>
+          <td>Jane</td>
         </tr>
-      <tr>
-        <td>
-          <div class="creator">
-            <img src="http://placehold.it/50x50" alt=""><span>Writer:<br>Philip J. Epstein</span>
-          </div>
-        </td>
-        <td>Jane</td>
-      </tr>
-      </table>
+        </table>
+    </div>
   </div>
-    <p>
-      Runtime: <%= @movie.runtime %>
-    <p>
-    
-    <p>
-      Genres: <%= @movie.genres %>
-    </p>
-    
-    <p>
-      Director: <%= @movie.director %>
-    </p>
-    
-    <p>
-      Actors: <%= @movie.actors %>
-    </p>
   </div>
 </div>
