@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213113105) do
+ActiveRecord::Schema.define(version: 20170221161216) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -49,8 +49,22 @@ ActiveRecord::Schema.define(version: 20170213113105) do
     t.integer  "cover_img_file_size"
     t.datetime "cover_img_updated_at"
     t.integer  "ratingcounter"
-    t.integer  "avgrating"
     t.string   "yt_trailer_url"
+    t.date     "release_date"
+    t.float    "avgrating"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.date     "date_of_birth"
+    t.string   "place_of_birth"
+    t.text     "bio"
+    t.string   "martial_status"
+    t.integer  "height"
+    t.text     "nicknames"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -66,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170213113105) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "context"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,75 @@
+// Place all the styles related to the Main_Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content {
+  background-color: $content-bg;
+  width: 100%;
+  color: $content-fg;
+}
+
+.slideshow-image {
+  width: 100%;
+}
+.slideshow-image-cont {
+  position: relative;
+  overflow: hidden;
+  .action {
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+
+}
+.left:hover {
+  cursor: url('left_cursor.png') 48 12, w-resize;
+}
+
+.right {
+  right: 0;
+  &:hover {
+    cursor: url('right_cursor.png') 0 12, e-resize;
+  }
+}
+
+/* Square Diamond (bigger horizontal size)
+.slideshow-click,
+.slideshow-click:hover {
+  z-index: 20;
+  display: block;
+  width: 26.5vw;
+  height: 26.5vw;
+  border: 2px solid black;
+  opacity: 0.1;
+  position: absolute;
+  top: 14.5%;
+  left: 35.8%;
+  transform: rotateZ(45deg) scaleZ(2);
+} */
+
+// Vertically stretched diamond for less horizontal mouse travel between left and right control divs
+.slideshow-click,
+.slideshow-click:hover {
+  z-index: 20;
+  display: block;
+  width: 10.5vw;
+  height: 10.5vw;
+  border: 2px solid black;
+  opacity: 0.1;
+  position: absolute;
+  top: 35%;
+  left: 44.4%;
+  transform: scaleY(2.5) rotateZ(45deg);
+}
+
+.main-page-header {
+  font-weight: 700;
+  font-size: 2.8em;
+  margin: 2% 0 0 1%;
+}
+
+.main-page-subheader {
+  font-weight: 700;
+  font-size: 2em;
+}

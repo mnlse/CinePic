@@ -1,8 +1,8 @@
 <% @movies.each do |movie| %>
   <div class="movie-cont">
     <%= link_to(image_tag(movie.cover_img.url(:front_page), class: "movie-cover-img"), movie_path(movie)) %>
-    <h4 class="movie-title"><%= link_to movie.title, movie_path(movie) %></h4>
-    <p class="movie-description"><%= truncate(movie.description, length: 700) %></p>
+    <h4 class="movie-front-title"><%= link_to movie.title, movie_path(movie) %></h4>
+    <p class="movie-front-description"><%= truncate(movie.description, length: 700) %></p>
     <%= link_to 'Show', movie %>
 
     <%= link_to 'Edit', edit_movie_path(movie) %>

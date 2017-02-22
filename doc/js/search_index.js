@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["readme"],"longSearchIndex":[""],"info":[["README","","README_rdoc.html","","<p>README\n<p>Cinema website\n<p>Site functionality\n"]]}}

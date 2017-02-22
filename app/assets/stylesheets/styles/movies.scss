@@ -1,8 +1,10 @@
 // Place all the styles related to the Movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .movie-head-cont {
   display: flex;
+  padding: 0 1%;
   .movie-info-cont {
     display: flex;
     align-self: flex-end;
@@ -18,12 +20,26 @@
   height: 60px;
   float: left;
 }
+
 .movie-show-content {
   position: relative;
 }
 
+.creator {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  margin: 3px;
+  span {
+    padding-left: 10px;
+  }
+}
+
 .movie-media {
+  background-color: #dcdcdc;
   height: 280px;
+  float: left;
+  padding: 0 1%;
   iframe {
     height: 100%;
     width: 600px;
@@ -33,19 +49,34 @@
   }
 }
 
-.movie-description {
+.movie-info {
+}
 
+.movie-creators {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-width: 0 0 1px 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.movie-description {
+  padding: 0 1%;
 }
 
 .rating {
   .rating-current {
-  font-size: 2em;
+    font-size: 2em;
   }
 }
+
 .rate-movie-dropdown {
   float: right;
-  width: 30%;
+  width: 25%;
   padding: 1%;
+  margin-right: 3%;
   background-color: #bababa;
   p.rating-helper-text {
     text-align: center;
@@ -84,7 +115,7 @@
 }
 
 #star-rating {
-  width: 70%;
+  width: 80%;
   margin: 3% auto;
   display: flex;
   label {

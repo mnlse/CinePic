@@ -1,0 +1,16 @@
+<p>Movie ID: <%= @movie.id %>
+<%= simple_form_for @movie do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :ratingcounter %>
+  <%= f.input :avgrating %>
+  <%= f.input :genres %>
+  <%= f.input :release_date %>
+  <%= f.input :writers %>
+  <%= f.input :runtime %>
+  <%= f.input :director %>
+  <%= f.input :actors %>
+  <%= f.input :yt_trailer_url %>
+  <%= f.input :cover_img %>
+  <%= f.button :submit %>
+<% end %>

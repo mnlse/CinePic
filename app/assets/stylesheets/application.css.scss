@@ -9,36 +9,19 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- *= require_tree .
- *= require_self
  */
 
-@import 'variables';
-@import 'reset';
-@import 'application_articles';
-@import 'form_styling';
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
 
-/* WYSIWYG editor */
-@import "froala_editor.min.css";
-@import "froala_style.min.css";
-@import "font-awesome";
+@import 'styles/main_pages';
+@import 'styles/movies';
+@import 'styles/articles';
+@import 'styles/users';
+@import 'styles/comments';
 
-/* WYSIWYG plugins */
-@import 'plugins/char_counter.min.css';
-@import 'plugins/code_view.min.css';
-@import 'plugins/colors.min.css';
-@import 'plugins/emoticons.min.css';
-@import 'plugins/file.min.css';
-@import 'plugins/fullscreen.min.css';
-@import 'plugins/help.min.css';
-@import 'plugins/image_manager.min.css';
-@import 'plugins/image.min.css';
-@import 'plugins/line_breaker.min.css';
-@import 'plugins/quick_insert.min.css';
-@import 'plugins/special_characters.min.css';
-@import 'plugins/table.min.css';
-@import 'plugins/video.min.css';
+@import 'styles/rating_system';
 
 a {
   text-decoration: none;
@@ -121,6 +104,8 @@ body {
 
 .modal {
   color: black;
+  position: absolute;
+  z-index: 99;
 }
 
 .login-cont {
