@@ -21,7 +21,7 @@ Cinema website
 ### for the user
 
 * A movie's runtime cannot be longer than 24 hours (author doesn't think of it as necessary in the next 15 years)
-* There are three types of users:  
+* There are four types of users:  
     * "user" - regular user
     * "janitor" - can remove comments
     * "moderator" - modify user profiles, ban users, modify reviews
