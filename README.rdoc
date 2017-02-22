@@ -1,6 +1,9 @@
-== README
+= README
 
 Cinema website
 
-## TODO
+== TODO
 * Make the search icon .svg (for some reason it doesn't render)
+
+== Important considerations
+* A movie's runtime cannot be longer than 24 hours

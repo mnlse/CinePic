@@ -3,15 +3,14 @@
     <h1><%= @movie.title %></h1>
     <%= link_to "Edit", edit_movie_path(@movie) %>
     <div class="movie-info-cont">
-      <span>1942</span>
-      <span>1h 42min</span>
-      <span>Drama, Romance, War</span>
-      <span>23 January 1943 (USA)</span>
+      <span><%= @movie.release_date.year %></span>
+      <span><%= Time.at(@movie.runtime * 60).utc.strftime("%H:%M h") %></span>
+      <span><%= @movie.genres %></span>
       <span class="rating">
-        <span class="rating-current">9.2</span>/<span class="rating-max">10</span>
+        <span class="rating-current"><%= @movie.avgrating %></span>/<span class="rating-max">10</span>
       </span>
       <div class="rate-movie-func">
-        <button class="rate-movie-btn">
+        <button class="dropdown-toggle-btn">
           <%= image_tag "star_filled.svg", class: "star-img hidden" %> <!-- filled star (is visible when btn is clicked) -->
           <%= image_tag "star_border_only.svg", class: "star-img" %> Rate this
         </button>
@@ -20,7 +19,7 @@
   </div>
   <hr>
   <div class="rate-movie-dropdown hidden">
-    <%= render 'ratings/new' %>
+    <%= render 'ratings/form' %>
   </div>
   <div class="movie-media">
     <%= image_tag(@movie.cover_img.url(:show_page)) %>

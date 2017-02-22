@@ -1,6 +1,6 @@
 function ready(){
     $.rating_system()
-    $('.rate-movie-btn').click(function() {
+    $('.dropdown-toggle-btn').click(function() {
       $('.rate-movie-dropdown').toggleClass("hidden");
       $('.star-img').toggleClass("hidden");
     });

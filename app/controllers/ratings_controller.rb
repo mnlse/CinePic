@@ -3,10 +3,13 @@ class RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
     @rating.user_id = current_user.id
     @rating.movie_id = params[:movie_id]
-    if @rating.save
-      redirect_to articles_path
-    else
-      puts params
+    @rating.save
+  end
+
+  def update
+    @rating = Rating.find(params[:id])
+    unless @rating.update(rating_params)
+      puts "N"
     end
   end
   private
