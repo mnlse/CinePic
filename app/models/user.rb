@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
     format: { with: /\A[a-zA-Z]+\Z/, message: "must contain only letters from A to Z" },
     allow_blank: true
 
+  enum privilege: { user: 0, janitor: 1, moderator: 2, admin: 3 }
+
   has_many :articles
   has_many :comments
   has_many :ratings
