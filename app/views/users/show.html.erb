@@ -9,7 +9,7 @@
     <div class="user-show-text">
       <div class="user-header">
         <h2 class="user-show-name"><%= @name %></h2>
-        <h3 class="user-show-username">(<%= @name %>)</h3>
+        <h3 class="user-show-username">(<%= @name %>) <span style="color: <%= @privilege_color %>"><%= @privilege %></span></h3>
       </div>
       <nav class="user-show-nav">
         <ul>
@@ -43,11 +43,19 @@
 
       <h2>Recently rated</h2>
       <hr>
+        <% @ratings.each do |rating| %>
+          <%= image_tag find_cover_img(rating.movie_id) %>
+          <%= rating.rating %>
+          <%= rating.thoughts %>
+        <% end %>
 
       <h2>Recent articles</h2>
       <hr>
 
       <h2>Recent comments</h2>
+        <% @comments.each do |comment| %>
+          <%= comment.content %>
+        <% end %>
       <hr>
 
       <h2>Recent blog posts</h2>

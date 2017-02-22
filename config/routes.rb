@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :people
   resources :movies do
     resources :ratings
   end
@@ -13,5 +14,6 @@ Rails.application.routes.draw do
   get '/discover', to: 'main_pages#discover_page'
   get '/learn', to: 'main_pages#learn_page'
   get '/discuss', to: 'main_pages#discuss_page'
+  get '/cpanel', to: 'cpanel#show'
   root to: redirect('/front_page') 
 end

@@ -3,7 +3,7 @@
     <h1><%= @movie.title %></h1>
     <%= link_to "Edit", edit_movie_path(@movie) %>
     <div class="movie-info-cont">
-      <span><%= @movie.release_date.year %></span>
+      <span><%= @movie.release_date %></span>
       <span><%= Time.at(@movie.runtime * 60).utc.strftime("%H:%M h") %></span>
       <span><%= @movie.genres %></span>
       <span class="rating">

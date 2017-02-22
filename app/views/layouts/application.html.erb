@@ -57,6 +57,9 @@
 
 
 <%= yield %>
+<% if @privilege == "admin" %>
+  <%= link_to "Admin Control Panel", cpanel_path, :style => "color: white" %>
+<% end %>
 
 </body>
 </html>

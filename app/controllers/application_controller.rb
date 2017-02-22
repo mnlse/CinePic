@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_display_name, if: :current_user
+  before_action :set_user_privilege
   before_action :set_removed_user
 
   # Prevent CSRF attacks by raising an exception.
@@ -15,6 +16,25 @@ class ApplicationController < ActionController::Base
       @name = @user.username
     else
       @name = @user.email
+    end
+  end
+
+  def set_user_privilege
+    unless @user.nil?
+      @privilege = @user.privilege
+      if @privilege === "user" or @privilege === "janitor"
+        @privilege = ""
+        @privilege_color = "inherit"
+      elsif @privilege === "moderator"
+        @privilege = "moderator"
+        @privilege_color = "green"
+      elsif @privilege === "admin"
+        @privilege = "admin"
+        @privilege_color = "red"
+      end
+    else
+      @privilege = ""
+      @privilege_color = "inherit"
     end
   end
 
