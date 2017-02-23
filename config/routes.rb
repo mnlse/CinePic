@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :movies do
     resources :ratings
   end
+
+  get '/slideshow_pics/panel', to: 'slideshow_pics#panel'
+  resources :slideshow_pics
   get '/front_page', to: 'main_pages#front_page'
   get '/discover', to: 'main_pages#discover_page'
   get '/learn', to: 'main_pages#learn_page'

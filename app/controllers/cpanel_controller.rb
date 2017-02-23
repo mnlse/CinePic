@@ -5,5 +5,6 @@ class CpanelController < ApplicationController
 
   def show
     @users = User.all
+    @people = Person.all
   end
 end

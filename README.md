@@ -26,6 +26,8 @@ Cinema website
     * "janitor" - can remove comments
     * "moderator" - modify user profiles, ban users, modify reviews
     * "admin" - modify articles, approve articles to front page, access to control panel, grant privileges to other users
+* Slideshow images have an approximately 2.51 width to height ratio. I've used 1920x762px images(arbitrary).  
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1920}{762}&space;\approx&space;2.51" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1920}{762}&space;\approx&space;2.51" title="\frac{1920}{762} \approx 2.51" /></a>
 
 ### for the programmer
 
