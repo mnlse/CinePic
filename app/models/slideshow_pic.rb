@@ -1,7 +1,7 @@
 class SlideshowPic < ActiveRecord::Base
   belongs_to :slideshow
   # width to height ratio: 2.51, 72px dpi
-  has_attached_file :picture, styles: { default: "1920x762" },
+  has_attached_file :picture, styles: { default: "1920x762#", preview: "300x119#" },
     path: ":rails_root/public/images/slideshow/:id/:style/:filename",
     url: "/images/slideshow/:id/:style/:filename"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/

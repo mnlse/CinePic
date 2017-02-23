@@ -6,5 +6,7 @@ class CpanelController < ApplicationController
   def show
     @users = User.all
     @people = Person.all
+    @newpic = SlideshowPic.new
+    @allpics = SlideshowPic.all
   end
 end

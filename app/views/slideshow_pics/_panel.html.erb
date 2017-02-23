@@ -1,0 +1,15 @@
+<h3>Currently loaded:</h3>
+<% @allpics.each do |pic| %>
+  <%= image_tag pic.picture.url(:preview) %>
+  <%= SlideshowPic.destination_types.key(pic.destination_type) %>
+  <%= pic.destination_id %>
+  <%= link_to "Delete", slideshow_pic_path(pic.id), method: :delete %>
+<% end %>
+<h3>Add picture</h3>
+<%= simple_form_for @newpic, url: slideshow_pics_path(@newpic) do |f| %>
+  <%= f.input :picture %>
+  <%= f.input :destination_type, collection: SlideshowPic.destination_types.keys %>
+  <%= f.input :destination_id, label: "Destination ID (Article ID/User ID)" %> <span>Destination ID depends on destination type</span>
+  <%= f.input :destination_url %>
+  <%= f.button :submit %>
+<% end %>

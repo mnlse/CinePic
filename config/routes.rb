@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :ratings
   end
 
+  get '/json/get_slideshow_imgs', to: 'json#get_slideshow_imgs'
   get '/slideshow_pics/panel', to: 'slideshow_pics#panel'
   resources :slideshow_pics
   get '/front_page', to: 'main_pages#front_page'

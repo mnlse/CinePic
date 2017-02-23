@@ -7,6 +7,8 @@
 **/*.swp
 **/*.swo
 /public/system/*
+/app/assets/images/slideshow/*
+/public/images/slideshow/**/*
 
 # Ignore bundler config.
 /.bundle
