@@ -33,6 +33,16 @@ Cinema website
     * "admin" - modify articles, approve articles to front page, access to control panel, grant privileges to other users
 * Slideshow images have an approximately 2.51 width to height ratio. I've used 1920x762px images(arbitrary).  
 <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1920}{762}&space;\approx&space;2.51" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1920}{762}&space;\approx&space;2.51" title="\frac{1920}{762} \approx 2.51" /></a>
+* Admin authentication is done like this:
+~~~ruby
+class SomeController < ApplicationController
+  include ControllersHelper
+  before_action :verify_admin, only: [:edit, :create]
+                            #  ^        ^-------^ actions which require verification
+                            # or except: [:show]
+end
+# Using normal devise authentication before admin verification is advisable.
+~~~
 
 ### for the programmer
 
@@ -61,7 +71,8 @@ The types are represented in the database as integers, and are defined in the Tr
 
     ---
 Made by other people and used here:
-* URL validator regex http://stackoverflow.com/questions/1128168/validation-for-url-domain-using-regex-rails
+* URL validator regex http://stackoverflow.com/questions/1128168/validation-for-url-domain-using-regex-rails  
+    `app/models/slideshow_pic.rb`
 
 Inspiration sites:
 * www.filmweb.pl
