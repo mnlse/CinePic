@@ -4,8 +4,9 @@ Cinema website
 
 ## Site functionality
 
+* slideshow with dynamically loaded images to reduce network bandwidth usage (jQuery | written by me)
 * user system (devise)
-* users are able to rate and review movies (jQuery star rating system - written by me)
+* users are able to rate and review movies (jQuery star rating system | written by me)
 * every user has a profile page
 * admin can put articles written by users onto the front page
 * movie ratings are calculated using arithmetic average
@@ -44,6 +45,7 @@ The types are represented in the database as integers, and are defined in the Tr
 * `UserRelationship` is a relationship between two Users - (`user_a` and `user_b`) and can take the form of: `friendship`, `block`, `friend_request`  
    When `block` - `user_a` is blocking `user_b`.   
    `friend_request` - `user_a` has sent a friend req to `user_b`.  
+* Slideshow API is done via "Json" controller, accessible via route `/json/get_slideshow_imgs`
 
 ## Credits 
 * _All_ of the graphics have been made by me (InkScape)
