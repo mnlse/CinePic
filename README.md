@@ -4,17 +4,21 @@ Cinema website
 
 ## Site functionality
 
-* slideshow with dynamically loaded images to reduce network bandwidth usage (jQuery | written by me)
+* slideshow with dynamically loaded images to reduce network bandwidth usage
 * user system (devise)
-* users are able to rate and review movies (jQuery star rating system | written by me)
+* users are able to rate and review movies
 * every user has a profile page
 * admin can put articles written by users onto the front page
 * movie ratings are calculated using arithmetic average
-* style is customizable via `/app/assets/stylesheets/_variables.scss`
+* style is customizable via `/app/assets/stylesheets/base/variables.scss`
 
 ## TODO
 
 * Make the search icon .svg (for some reason it doesn't render)
+* Add dynamic slideshow rendering
+* Add responsive people panel via <span>Vue</span>.js
+* Add search bar functionality
+* Create a simple integrated forums
 
 ---
 ## Important considerations
@@ -48,9 +52,18 @@ The types are represented in the database as integers, and are defined in the Tr
 * Slideshow API is done via "Json" controller, accessible via route `/json/get_slideshow_imgs`
 
 ## Credits 
+* All of the rails code has been written by me (except the gems and mentioned below)
+* The integrated & responsive star-rating system has been written by me (jQuery)  
+    `app/assets/javascripts/rating_system.js`
+* The dynamic slideshow has been written by me (jQuery)  
+    `app/assets/javascripts/main_pages.js.erb`
 * _All_ of the graphics have been made by me (InkScape)
 
-Inspiration:
+    ---
+Made by other people and used here:
+* URL validator regex http://stackoverflow.com/questions/1128168/validation-for-url-domain-using-regex-rails
+
+Inspiration sites:
 * www.filmweb.pl
 * www.imdb.com
 * www.studiogang.com
