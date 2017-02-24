@@ -1,0 +1,72 @@
+var currentPos = 0;
+var maxPos = null;
+var minPos = 0;
+var images = [];
+var leftCtl = $(".left");
+var rightCtl = $(".right");
+
+images.isDefined = function(x) {
+  return !(typeof this[x] === "undefined");
+}
+
+var respond = function(data) {
+  var defLeftCursor = $('.left').css("cursor");
+  var defRightCursor = $('.right').css("cursor");
+  var updateCursors = function() {
+    if(minPos === currentPos) {
+      $('.left').css("cursor", 'url(\'<%= asset_path("impossible_action_cursor.png") %>\') 15 15, not-allowed');
+    } else if (maxPos === currentPos) {
+      $('.right').css("cursor", 'url(\'<%= asset_path("impossible_action_cursor.png") %>\') 15 15, not-allowed');
+    } else {
+      $('.left').css("cursor", defLeftCursor);
+      $('.right').css("cursor", defRightCursor);
+    }
+  };
+  updateCursors();
+
+  $('.left').click(function(e) {
+    e.stopPropagation();
+    console.log("clickedLeft");
+    if( images.isDefined(currentPos - 1) ) {
+      images[currentPos].removeClass("sl-disp").addClass("sl-right");
+      images[currentPos - 1].addClass("sl-disp").removeClass("sl-left");
+      currentPos = currentPos - 1;
+      updateCursors();
+    }
+  });
+  $('.right').click(function(e) {
+    e.stopPropagation();
+    if( images.isDefined(currentPos + 1) ) {
+      images[currentPos].removeClass("sl-disp").addClass("sl-left");
+      images[currentPos + 1].addClass("sl-disp").removeClass("sl-right");
+      currentPos = currentPos + 1;
+      updateCursors();
+    }
+  });
+}
+
+var initSlides = function(data) {
+  for(i=0; i<3; i++) {
+    currentImg = $("#sl_img" + i);
+    currentImg.css("background-image", 'url("' + data[i].pic_url) + '")';
+    images.push(currentImg);
+  }
+
+  images[0].addClass("sl-display");
+  images[1].addClass("sl-right");
+  images[2].addClass("sl-right");
+
+  maxPos = data.length - 1;
+
+  respond(data);
+}
+
+function mainPagesReady() {
+  slidesImg = $.getJSON('json/get_slideshow_imgs', function(data) {
+    initSlides(data);
+  });
+  // $('.slideshow-all-images img')
+}
+
+$(document).ready(mainPagesReady);
+$(document).on("page:load", mainPagesReady);

@@ -24,12 +24,11 @@
 }
 
 .sl-left {
-  left: -100%;
+  transform: translateX(-100%);
 }
 .sl-right {
-  left: 100%;
+  transform: translateX(100%);
 }
-
 
 .slideshow-image-cont {
   width: 100%;
@@ -43,15 +42,13 @@
     top: 0;
   }
 }
-.left:hover {
+.left {
   cursor: url('left_cursor.png') 48 12, w-resize;
 }
 
 .right {
   right: 0;
-  &:hover {
-    cursor: url('right_cursor.png') 0 12, e-resize;
-  }
+  cursor: url('right_cursor.png') 0 12, e-resize;
 }
 
 /* Square Diamond (bigger horizontal size)
