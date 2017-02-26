@@ -73,12 +73,13 @@
   display: block;
   width: 10.5vw;
   height: 10.5vw;
-  border: 2px solid black;
-  opacity: 0.1;
+  border: 2px solid white;
+  opacity: 0.2;
   position: absolute;
   top: 35%;
   left: 44.4%;
   transform: scaleY(2.5) rotateZ(45deg);
+  transition: border 0.5s;
 }
 
 .main-page-header {

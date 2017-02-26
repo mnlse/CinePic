@@ -39,3 +39,19 @@
     width: 30%;
   }
 }
+
+.fp-btns {
+  clear: both;
+  display: flex;
+  width: 40%;
+  margin: 0 auto;
+  a {
+  flex: 1;
+  padding: 1em 0;
+  text-align: center;
+  border: 1px solid black;
+  }
+  a:first-of-type {
+    border-right: 0;
+  }
+}

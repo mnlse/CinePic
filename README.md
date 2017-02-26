@@ -15,7 +15,8 @@ Cinema website
 ## TODO
 
 * Make the search icon .svg (for some reason it doesn't render)
-* Add dynamic slideshow rendering
+* ~~Add dynamic slideshow rendering~~
+* Make a color changing diamond
 * Add responsive people panel via <span>Vue</span>.js
 * Add search bar functionality
 * Create a simple integrated forums
