@@ -1,0 +1,29 @@
+var el = {
+  artMore: '#article-btns .showmore',
+  artAll: '#article-btns .showall',
+  movMore: '#movie-btns .showmore',
+  movAll: '#movie-btns .showall'
+};
+
+var update = function(what) {
+  if(what === "article") {
+
+  } else if (what === "movie") {
+
+  }
+};
+
+var listenToAction = function() {
+  $(el.artMore).click(function(e) {
+    e.preventDefault();
+    console.log("Update Articles");
+  });
+};
+
+var fpReady = function() {
+  $.slideshow();
+  listenToAction();
+};
+
+$(document).ready(fpReady);
+$(document).on('page:load', fpReady);

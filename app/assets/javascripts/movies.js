@@ -1,4 +1,4 @@
-function ready(){
+function moviesReady(){
     $.rating_system()
     $('.dropdown-toggle-btn').click(function() {
       $('.rate-movie-dropdown').toggleClass("hidden");
@@ -6,5 +6,5 @@ function ready(){
     });
 }; 
 
-$(document).ready(ready)
-$(document).on("page:load", ready);
+$(document).ready(moviesReady)
+$(document).on("page:load", moviesReady);

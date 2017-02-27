@@ -81,6 +81,9 @@
   transform: scaleY(2.5) rotateZ(45deg);
   transition: border 0.5s;
 }
+.slideshow-click:active {
+  background-color: red;
+}
 
 .main-page-header {
   font-weight: 700;
