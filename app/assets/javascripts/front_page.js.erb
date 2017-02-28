@@ -1,14 +1,58 @@
 var el = {
+  artContainer: '.article-cont',
+  allArtContainer: '.articles-cont',
   artMore: '#article-btns .showmore',
   artAll: '#article-btns .showall',
   movMore: '#movie-btns .showmore',
   movAll: '#movie-btns .showall'
 };
+var cls = {
+  artContainer: 'article-cont',
+  artThumbnail: 'article-thumbnail',
+  artTitle: 'article-title',
+  artRightCont: 'article-right',
+  artContent: 'article-fp-content'
+}
 
 var update = function(what) {
-  if(what === "article") {
+  if(what === "articles") {
+    var last_id = 6;
+    articlesJSON = $.ajax('/json/get_articles?last_id=' + last_id, {
+      dataType: 'json',
+      success: function(data) {
+        for(arrElem in data) {
+          console.log(data[arrElem]);
+          finalElem = $('<div>');
+          finalElem.addClass(cls.artContainer);
 
-  } else if (what === "movie") {
+          thumbnailLink = $("<a>");
+          thumbnailLink.attr("href", data[arrElem].url).addClass(cls.artThumbnail);
+
+          thumbnailImg = $("<img>");
+          thumbnailImg.attr("src", data[arrElem].thumb_url);
+          thumbnailImg.addClass(cls.artThumbnail);
+
+          right = $('<div>');
+          right.addClass(cls.artRightCont);
+
+          aTitle = $('<h4>' + data[arrElem].title + '</h4>');
+          aTitle.addClass(cls.artTitle);
+
+          aContent = $('<p>' + data[arrElem].content + '</p>');
+          aContent.addClass(cls.artContent);
+
+          right.append(aTitle);
+          right.append(aContent);
+
+
+          thumbnailLink.append(thumbnailImg);
+          finalElem.append(thumbnailLink);
+          finalElem.append(right);
+          $(el.allArtContainer).append(finalElem);
+        }
+      }
+    });
+  } else if (what === "movies") {
 
   }
 };
@@ -16,7 +60,7 @@ var update = function(what) {
 var listenToAction = function() {
   $(el.artMore).click(function(e) {
     e.preventDefault();
-    console.log("Update Articles");
+    update("articles");
   });
 };
 

@@ -21,4 +21,32 @@ class JsonController < ApplicationController
       format.json { render json: msg }
     end
   end
+
+  def get_articles
+    last_article_id = params[:last_id].to_i
+    articles = []
+    served_counter = 0
+    articles_per_req = 4
+    @temp = Article.where(["id < ? AND id > ?", last_article_id, last_article_id - articles_per_req]).reverse.to_a
+
+    @temp.each do |record|
+      unless record.title.nil? or record.title.blank? or served_counter == articles_per_req
+        obj = {}
+        obj[:id] = record.id
+        obj[:url] = article_path(record.id)
+        obj[:thumb_url] = record.thumbnail.url(:front_page)
+        obj[:title] = record.title
+        obj[:content] = ActionController::Base.helpers.truncate(ActionController::Base.helpers.sanitize(record.content, tags: []), length: 600)
+
+        articles.append(obj)
+        served_counter += 1
+      end
+    end
+    @temp.append(last_article_id)
+
+    respond_to do |format|
+      format.html { render html: articles }
+      format.json { render json: articles }
+    end
+  end
 end

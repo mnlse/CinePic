@@ -1,6 +1,6 @@
 class MainPagesController < ApplicationController
   def front_page
-    @articles = Article.all
+    @articles = Article.last(4).reverse
     @movies = Movie.all
     @trivium = Trivium.first
   end

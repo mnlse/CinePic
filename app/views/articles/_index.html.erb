@@ -1,16 +1,24 @@
-<% @articles.each do |article| %>
-  <div class="article-cont">
-    <%= link_to(image_tag(article.thumbnail.url(:front_page), class: "article-thumbnail"), article_path(article)) %>
-    <h4 class="article-title"><%= link_to article.title, article_path(article) %></h4>
-    <p class="article-content"><%= truncate(sanitize(article.content, tags: []), length: 800) %></p>
-    <%= link_to 'Show', article %>
+<div class="articles-cont">
+  <% @articles.each do |article| %>
+    <div class="article-cont">
+      <%= link_to(image_tag(article.thumbnail.url(:front_page), class: "article-thumbnail"), article_path(article), class: "article-thumbnail") %>
+      <div class="article-right">
+        <h4 class="article-title"><%= link_to article.title, article_path(article) %>
+          <% if current_user && current_user.id == article.author %>
+            <%= link_to 'Edit', edit_article_path(article), 'data-no-turbolink': true %>
+            <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </h4>
+        <p class="article-fp-content">
 
-    <% if current_user && current_user.id == article.author %>
-      <%= link_to 'Edit', edit_article_path(article), 'data-no-turbolink': true %>
-      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>    
-<% end %>
+          <%= truncate(sanitize(article.content, tags: []), length: 600) %>
+          <br>
+          <%= link_to 'More...', article, class: "article-show-link"%>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'New Article', new_article_path, 'data-no-turbolink': true %>
 <div id="article-btns" class="fp-btns">

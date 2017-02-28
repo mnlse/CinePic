@@ -19,7 +19,9 @@ Cinema website
 * Make a color changing diamond
 * Add responsive people panel via <span>Vue</span>.js
 * Add search bar functionality
-* Create a simple integrated forums
+* Create simple integrated forums
+
+* Integrate article thumbnail & article show page (TinyMCE)
 
 ---
 ## Important considerations
