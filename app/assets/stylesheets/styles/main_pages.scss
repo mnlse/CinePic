@@ -95,3 +95,37 @@
   font-weight: 700;
   font-size: 2em;
 }
+
+.fp-btns {
+  /* background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); */
+  position: relative;
+}
+.fp-btns a {
+  position: relative;
+}
+
+
+/* animation on click */
+.fp-btns a:after {
+  background-color: rgba(0,0,0,0);
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms;
+}
+
+.fp-btns a:active:after {
+  background-color: rgba(0,0,0,0.3);
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  transition: all 0s;
+}
