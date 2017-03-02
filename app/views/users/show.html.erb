@@ -38,16 +38,43 @@
       <p>First name: <%= @user.first_name %></p>
       <p>Last name: <%= @user.last_name %></p>
       <p>Created at: <%= @user.created_at.to_s(:long_ordinal) %></p>
-      <h2>Highest rated</h2>
+      <h2>Highest ratings</h2>
       <hr>
+        <div class="us-movs-cont">
+          <% @highest_rated.each do |rated| %>
+            <div class="us-mov-cont">
+              <div class="row">
+                <%= link_to(image_tag(rated.mov_cover_url, class: "us-movie-cover"), rated.mov_url) %>
+                <div class="us-mov-info">
+                  <span class="us-mov-title"><%= link_to rated.mov_title, rated.mov_url %></span> <br>
+                  <span class="us-mov-year"><%= rated.mov_year %></span> <br>
+                  <span class="us-mov-rating"><%= rated.rating %></span> <br>
+                  <span class="us-mov-ago"><%= time_ago_in_words(rated.rating_date) %> ago</span>
+                </div>
+              </div>
+              <span class="us-mov-thoughts"><%= rated.thoughts %></span>
+            </div>
+          <% end %>
+        </div>
 
       <h2>Recently rated</h2>
       <hr>
-        <% @ratings.each do |rating| %>
-          <%= image_tag find_cover_img(rating.movie_id) %>
-          <%= rating.rating %>
-          <%= rating.thoughts %>
-        <% end %>
+        <div class="us-movs-cont">
+          <% @recently_rated.each do |rated| %>
+            <div class="us-mov-cont">
+              <div class="row">
+                <%= link_to(image_tag(rated.mov_cover_url, class: "us-movie-cover"), rated.mov_url) %>
+                <div class="us-mov-info">
+                  <span class="us-mov-title"><%= link_to rated.mov_title, rated.mov_url %></span> <br>
+                  <span class="us-mov-year"><%= rated.mov_year %></span> <br>
+                  <span class="us-mov-rating"><%= rated.rating %></span> <br>
+                  <span class="us-mov-ago"><%= time_ago_in_words(rated.rating_date) %> ago</span>
+                </div>
+              </div>
+              <span class="us-mov-thoughts"><%= rated.thoughts %></span>
+            </div>
+          <% end %>
+        </div>
 
       <h2>Recent articles</h2>
       <hr>

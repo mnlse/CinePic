@@ -56,3 +56,35 @@
     }
   }
 }
+
+.us-movie-cover {
+  height: 120px;
+  @include noselect;
+}
+.us-movs-cont {
+  display: flex;
+  align-items: flex-end;
+}
+.us-mov-cont {
+  width: 14vw;
+  margin: 1vw;
+}
+
+.row {
+  display: flex;
+}
+
+.us-mov-title {
+  a {
+    color: darkred;
+  }
+}
+
+.us-mov-thoughts {
+  display: block;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  padding: 3px;
+  margin: 3px;
+  font-size: 12px;
+}

@@ -99,6 +99,7 @@
 .fp-btns {
   /* background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); */
   position: relative;
+  @include noselect
 }
 .fp-btns a {
   position: relative;
