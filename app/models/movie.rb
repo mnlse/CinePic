@@ -3,5 +3,5 @@ class Movie < ActiveRecord::Base
   validates_attachment :cover_img, content_type: { content_type: /\Aimage/ }, presence: true, size: { less_than: 2.megabytes }
 
   has_many :ratings
-  has_many :people
+  has_and_belongs_to_many :people
 end

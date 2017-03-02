@@ -1,10 +1,15 @@
 <h3>Currently loaded:</h3>
-<% @allpics.each do |pic| %>
-  <%= image_tag pic.picture.url(:preview) %>
-  <%= SlideshowPic.destination_types.key(pic.destination_type) %>
-  <%= pic.destination_id %>
-  <%= link_to "Delete", slideshow_pic_path(pic.id), method: :delete %>
-<% end %>
+<div class="cpanel-slide-cont">
+  <% @allpics.each do |pic| %>
+    <div class="cpanel-slide">
+      <%= image_tag pic.picture.url(:preview) %>
+      <%= SlideshowPic.destination_types.key(pic.destination_type) %>
+      <%= pic.destination_id %>
+      <%= link_to "Edit", slideshow_pic_path(pic.id), method: :patch %>
+      <%= link_to "Delete", slideshow_pic_path(pic.id), method: :delete %>
+    </div>
+  <% end %>
+</div>
 <h3>Add picture</h3>
 <%= simple_form_for @newpic, url: slideshow_pics_path(@newpic) do |f| %>
   <%= f.input :picture %>

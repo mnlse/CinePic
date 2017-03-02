@@ -10,5 +10,12 @@
     </ul>
   </nav>
   <div class="cpanel-display">
+    <h1>Users</h1>
+    <hr>
+    <% @users.each do |user| %>
+      <div class="cpanel-user-cont">
+        <%= image_tag user.avatar.url(:big), class: "cpanel-user-avatar" %>
+      </div>
+    <% end %>
   </div>
 </div>

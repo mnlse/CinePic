@@ -17,7 +17,12 @@
     <div class="nav-mid-cont">
       <div class="search-bar">
         <%= image_tag("search_icon.png", alt: "Search Icon", class: "search-icon") %>
+        <input id="search-bar" type="text">
       </div>
+
+      <div class="search-results">
+      </div>
+
       <div class="main-pages-nav">
         <ul>
           <%= nav_link "Front Page", front_page_path %>

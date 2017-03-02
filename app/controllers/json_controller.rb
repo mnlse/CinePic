@@ -49,4 +49,29 @@ class JsonController < ApplicationController
       format.json { render json: articles }
     end
   end
+
+  def autocomplete_search
+    query = params[:query]
+    msg = []
+    unless query.nil? or query.blank?
+      results = Movie.where("lower(title) LIKE ?", "%#{query.downcase}%").to_a
+
+      results.each do |r|
+        obj = {}
+        obj[:title] = r.title
+        obj[:year] = r.release_date.year
+        obj[:thumbnail_url] = r.cover_img.url(:show_page)
+        obj[:url] = movie_path(r.id)
+        msg.push(obj)
+      end
+
+      respond_to do |format|
+        format.html { render html: msg }
+        format.json { render json: msg }
+      end
+    else
+      raise 'Bad query'
+    end
+  end
+
 end

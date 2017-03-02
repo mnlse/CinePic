@@ -16,9 +16,12 @@ Cinema website
 
 * Make the search icon .svg (for some reason it doesn't render)
 * ~~Add dynamic slideshow rendering~~
-* Make a color changing diamond
+* Make a responsive color changing diamond (slideshow)
 * Add responsive people panel via <span>Vue</span>.js
-* Add search bar functionality
+* ~~Add search bar functionality~~
+    * Improve efficiency by not re-rendering the same results
+    * Keyboard navigation(up, down keys)
+    * Display user's rating if rated
 * Create simple integrated forums
 
 * Integrate article thumbnail & article show page (TinyMCE)

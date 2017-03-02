@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
+    @people_movies = PeopleMovies.new
   end
 
   def create
@@ -46,6 +47,15 @@ class MoviesController < ApplicationController
   def destroy
     @movie.destroy
     redirect_to 'index'
+  end
+
+  def new_person
+  end
+
+  def edit_person
+  end
+
+  def destroy_person
   end
 
   private

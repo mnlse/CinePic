@@ -1,72 +1,78 @@
-var el = {
-  artContainer: '.article-cont',
-  allArtContainer: '.articles-cont',
-  artMore: '#article-btns .showmore',
-  artAll: '#article-btns .showall',
-  movMore: '#movie-btns .showmore',
-  movAll: '#movie-btns .showall'
-};
-var cls = {
-  artContainer: 'article-cont',
-  artThumbnail: 'article-thumbnail',
-  artTitle: 'article-title',
-  artRightCont: 'article-right',
-  artContent: 'article-fp-content'
-}
+var frontPage = function() {
+  var el = {
+    artContainer: '.article-cont',
+    allArtContainer: '.articles-cont',
+    artMore: '#article-btns .showmore',
+    artAll: '#article-btns .showall',
+    movMore: '#movie-btns .showmore',
+    movAll: '#movie-btns .showall'
+  };
 
-var update = function(what) {
-  if(what === "articles") {
-    var last_id = 6;
-    articlesJSON = $.ajax('/json/get_articles?last_id=' + last_id, {
-      dataType: 'json',
-      success: function(data) {
-        for(arrElem in data) {
-          console.log(data[arrElem]);
-          finalElem = $('<div>');
-          finalElem.addClass(cls.artContainer);
+  var cls = {
+    artContainer: 'article-cont',
+    artThumbnail: 'article-thumbnail',
+    artTitle: 'article-title',
+    artRightCont: 'article-right',
+    artContent: 'article-fp-content'
+  };
 
-          thumbnailLink = $("<a>");
-          thumbnailLink.attr("href", data[arrElem].url).addClass(cls.artThumbnail);
+  var update = function(what) {
+    if(what === "articles") {
+      var last_id = 6;
+      articlesJSON = $.ajax('/json/get_articles?last_id=' + last_id, {
+        dataType: 'json',
+        success: function(data) {
+          for(arrElem in data) {
+            console.log(data[arrElem]);
+            finalElem = $('<div>');
+            finalElem.addClass(cls.artContainer);
 
-          thumbnailImg = $("<img>");
-          thumbnailImg.attr("src", data[arrElem].thumb_url);
-          thumbnailImg.addClass(cls.artThumbnail);
+            thumbnailLink = $("<a>");
+            thumbnailLink.attr("href", data[arrElem].url).addClass(cls.artThumbnail);
 
-          right = $('<div>');
-          right.addClass(cls.artRightCont);
+            thumbnailImg = $("<img>");
+            thumbnailImg.attr("src", data[arrElem].thumb_url);
+            thumbnailImg.addClass(cls.artThumbnail);
 
-          aTitle = $('<h4>' + data[arrElem].title + '</h4>');
-          aTitle.addClass(cls.artTitle);
+            right = $('<div>');
+            right.addClass(cls.artRightCont);
 
-          aContent = $('<p>' + data[arrElem].content + '</p>');
-          aContent.addClass(cls.artContent);
+            aTitle = $('<h4>' + data[arrElem].title + '</h4>');
+            aTitle.addClass(cls.artTitle);
 
-          right.append(aTitle);
-          right.append(aContent);
+            aContent = $('<p>' + data[arrElem].content + '</p>');
+            aContent.addClass(cls.artContent);
+
+            right.append(aTitle);
+            right.append(aContent);
 
 
-          thumbnailLink.append(thumbnailImg);
-          finalElem.append(thumbnailLink);
-          finalElem.append(right);
-          $(el.allArtContainer).append(finalElem);
+            thumbnailLink.append(thumbnailImg);
+            finalElem.append(thumbnailLink);
+            finalElem.append(right);
+            $(el.allArtContainer).append(finalElem);
+          }
         }
-      }
+      });
+    } else if (what === "movies") {
+      
+    }
+  };
+
+  var listenToAction = function() {
+    $(el.artMore).click(function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      update("articles");
     });
-  } else if (what === "movies") {
+  };
 
-  }
-};
-
-var listenToAction = function() {
-  $(el.artMore).click(function(e) {
-    e.preventDefault();
-    update("articles");
-  });
+  listenToAction();
 };
 
 var fpReady = function() {
   $.slideshow();
-  listenToAction();
+  frontPage();
 };
 
 $(document).ready(fpReady);

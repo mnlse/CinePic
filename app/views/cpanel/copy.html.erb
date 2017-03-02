@@ -10,5 +10,19 @@
     </ul>
   </nav>
   <div class="cpanel-display">
+    <h2>Manage Users</h2>
+    <% @users.each do |user| %>
+      <div class="cpanel-user">
+      <%= user.email %>
+      </div>
+    <% end %>
+    <h2>Manage People</h2>
+    <hr>
+    <% @people.each do |person| %>
+      <%= person.name %>
+    <% end %>
+    <%= link_to "New Person", new_person_path %>
+    <h2>Manage Slideshow</h2>
+    <%= render '/slideshow_pics/panel' %>
   </div>
 </div>

@@ -11,7 +11,14 @@ Rails.application.routes.draw do
     resources :ratings
   end
 
+  get '/cpanel/users', to: 'cpanel#users', as: :cpanel_users
+  get '/cpanel/articles', to: 'cpanel#articles', as: :cpanel_articles
+  get '/cpanel/slideshow', to: 'cpanel#slideshow', as: :cpanel_slideshow
+  get '/cpanel/people', to: 'cpanel#people', as: :cpanel_people
+  get '/cpanel/other', to: 'cpanel#other', as: :cpanel_other
+  get '/people_movies/new', to: 'movies#new_person', as: :new_people_movies
   get '/json/get_slideshow_imgs', to: 'json#get_slideshow_imgs'
+  get '/json/autocomplete_search', to: 'json#autocomplete_search'
   get 'json/get_articles', to: 'json#get_articles'
   get '/slideshow_pics/panel', to: 'slideshow_pics#panel'
   resources :slideshow_pics

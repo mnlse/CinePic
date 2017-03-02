@@ -1,4 +1,11 @@
 <div class="content">
-  <h1>Create a new movie</h1>
+  <h1>Basic Info</h1>
   <%= render 'form' %>
+  <h1>Add people</h1>
+  <%= simple_form_for @people_movies, url: new_people_movies_path do |f| %>
+    <%= f.input :movie_id %>
+    <%= f.input :person_id %>
+    <%= f.input :roles %>
+    <%= f.button :submit %>
+  <% end %>
 </div>

@@ -1,0 +1,38 @@
+.cpanel-content {
+  display: flex;
+}
+.cpanel-sidenav {
+  flex: 1;
+  font-size: 1.3em;
+  ul {
+    padding-left: 3%;
+    li {
+      padding: 2% 0;
+      &:hover {
+        background-color: #b1b1b1;
+       }
+    }
+  }
+}
+.cpanel-display {
+  flex: 8;
+}
+.cpanel-label {
+  padding: 10% 0;
+}
+
+.cpanel-slide-cont {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cpanel-user-avatar {
+  height: 75px;
+}
+
+.cpanel-slide {
+  padding-bottom: 10px;
+  img {
+    display: block;
+  }
+}
