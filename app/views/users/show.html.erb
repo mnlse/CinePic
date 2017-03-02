@@ -78,11 +78,23 @@
 
       <h2>Recent articles</h2>
       <hr>
+      <div class="us-arts-cont">
+        <% @articles.each do |art| %>
+          <div class="us-art-cont">
+            <%= link_to(image_tag(art.thumbnail_url, class: "us-art-thumbnail"), art.url) %>
+            <span class="us-art-title"><%= link_to art.title, art.url %></a>
+          </div>
+        <% end %>
+      </div>
 
       <h2>Recent comments</h2>
-        <% @comments.each do |comment| %>
-          <%= comment.content %>
-        <% end %>
+        <div class="us-cmts-cont">
+          <% @comments.each do |comment| %>
+            <div class="us-cmt-cont">
+              <%= comment.content %>
+            </div>
+          <% end %>
+        </div>
       <hr>
 
       <h2>Recent blog posts</h2>

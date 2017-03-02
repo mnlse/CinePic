@@ -88,3 +88,30 @@
   margin: 3px;
   font-size: 12px;
 }
+
+.us-arts-cont {
+  display: flex;
+  flex-wrap: wrap;
+}
+.us-arts-cont ~ h2 {
+  clear: both;
+}
+
+.us-art-cont {
+  width: 50%;
+}
+
+.us-art-title {
+  display: block;
+  float: left;
+  font-size: 1.3em;
+  height: 25%;
+}
+
+.us-art-thumbnail {
+  float: left;
+  vertical-align: top;
+  margin: 1vw;
+  width: 87px;
+  height: 120px;
+}

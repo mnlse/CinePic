@@ -27,6 +27,17 @@ class UsersController < ApplicationController
     ratings = Rating.where(user_id: params[:id]).order("rating DESC").first(10)
     @highest_rated = prepRatings(ratings)
 
+    @articles = []
+
+    articles_assoc = Article.where(author: params[:id])
+    articles_assoc.each do |art|
+      obj = OpenStruct.new
+      obj.title = art.title
+      obj.url = article_path(art.id)
+      obj.thumbnail_url = art.thumbnail.url(:front_page)
+      @articles.push(obj)
+    end
+
 
 
     @comments = Comment.where(user_id: params[:id])
