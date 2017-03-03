@@ -82,21 +82,13 @@ var search = function() {
       }
       // console.log(e.target.value);
     });
-    $(el.search).focusout(function(e) {
-      clear();
-    });
-    /* 
-    $(el.search).click(function(e) {
-      e.stopPropagation();
-    });
-    */
-    /* $('body').click(function() {
+    $('body').click(function() {
       clear();
     });
     $(el.slideshowCtl).click(function(e) {
       e.stopPropagation();
       clear();
-    }); */
+    });
   };
 
   listenToAction();
