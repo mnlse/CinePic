@@ -36,3 +36,19 @@
     display: block;
   }
 }
+
+.cp-article {
+  padding: 1vw;
+}
+
+.cp-art-thumbnail {
+  width: 60px;
+  height: 60px;
+}
+
+.ctl-icons {
+  float: right;
+  .ctl-icon {
+    width: 30px;
+  }
+}

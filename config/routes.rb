@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/cpanel/slideshow', to: 'cpanel#slideshow', as: :cpanel_slideshow
   get '/cpanel/people', to: 'cpanel#people', as: :cpanel_people
   get '/cpanel/other', to: 'cpanel#other', as: :cpanel_other
+  get '/cpanel/trivia', to: 'cpanel#trivia', as: :cpanel_trivia
   get '/people_movies/new', to: 'movies#new_person', as: :new_people_movies
   get '/json/get_slideshow_imgs', to: 'json#get_slideshow_imgs'
   get '/json/autocomplete_search', to: 'json#autocomplete_search'
