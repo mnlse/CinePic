@@ -2,7 +2,7 @@ class MainPagesController < ApplicationController
   def front_page
     @articles = Article.last(4).reverse
     @movies = Movie.all
-    @trivium = Trivium.where(context: 0).order("RANDOM()").first
+    @trivia = Trivium.where(context: 0).order("RANDOM()").first(2)
   end
 
   def discover_page

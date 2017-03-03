@@ -1,1 +1,5 @@
-<p class="trivium"><%= @trivium.content %></p>
+<div class="fp-trivia-cont">
+  <% @trivia.each do |trivium| %>
+    <p class="fp-trivium"><%= trivium.content %></p>
+  <% end %>
+</div>
