@@ -15,7 +15,7 @@
 @import 'base/variables';
 @import 'base/mixins';
 
-@import 'styles/main_pages';
+@import 'styles/front_page';
 @import 'styles/movies';
 @import 'styles/articles';
 @import 'styles/users';
@@ -261,7 +261,6 @@ li.active {
 }
 
 .article-cont {
-
   clear: both;
   .article-title {
     font-size: 30px;

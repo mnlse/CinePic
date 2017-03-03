@@ -1,0 +1,19 @@
+<div class="fp-all-trending-cont">
+  <a class="fp-trending-ctl prev">&lt;</a>
+  <% @movies.each do |movie| %>
+    <div class="fp-trending-cont">
+        <%= link_to(image_tag(movie.cover_img.url(:front_page), class: "fp-trending-cover"), movie_path(movie), class: "fp-trending-cover") %>
+        <div class="fp-trending-info">
+          <h4 class="fp-trending-title"><%= link_to movie.title, movie_path(movie) %></h4>
+          <p class="fp-trending-desc"><%= link_to(truncate(movie.description, length: 500), movie_path(movie)) %> <a>More...</a></p>
+        </div>
+    </div>
+  <% end %>
+  <a class="fp-trending-ctl next">&gt;</a>
+</div>
+<div class="fp-btns">
+  <a class="showmore">Show more</a>
+  <a class="showall">All Trending</a>
+</div>
+
+<%= link_to 'New movie', new_movie_path %>

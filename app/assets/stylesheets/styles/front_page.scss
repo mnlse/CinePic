@@ -130,3 +130,45 @@
   border-radius: 50%;
   transition: all 0s;
 }
+
+.fp-all-trending-cont {
+  display: flex;
+}
+
+.fp-trending-cont {
+  flex: 31;
+  display: flex;
+  background-color: #eaeaea;
+  padding: 1vw;
+  @include noselect;
+  & * {
+    outline: 0;
+  }
+}
+.fp-trending-title {
+  font-size: 1.4em;
+  margin-bottom: 0.4em;
+}
+.fp-trending-info {
+  margin-left: 0.4em;
+}
+a.fp-trending-cover {
+}
+img.fp-trending-cover {
+}
+.fp-trending-ctl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  background-color: #eaeaea;
+  flex: 4.5;
+  align-self: stretch;
+  text-align: center;
+  @include noselect;
+}
+.fp-trending-ctl.next {
+}
+.fp-trending-ctl.prev {
+
+}
