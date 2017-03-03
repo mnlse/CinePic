@@ -73,7 +73,7 @@ var search = function() {
   };
   
   var listenToAction = function() {
-    $(el.search).on("change paste keyup", function(e) {
+    $(el.search).on("paste keyup", function(e) {
       e.stopPropagation();
       if(e.target.value.trim() != "") {
         queryApi(e.target.value);
@@ -83,7 +83,6 @@ var search = function() {
       // console.log(e.target.value);
     });
     $(el.search).focusout(function(e) {
-      results = [];
       clear();
     });
     /* 

@@ -115,3 +115,27 @@
   width: 87px;
   height: 120px;
 }
+
+.us-cmt-cont {
+  background-color: #f8f8f8;
+  padding: 0.5vw;
+  margin-bottom: 1vw;
+  display: flex;
+  &:first-of-type {
+    margin-top: 1vw;
+  }
+  .us-cmt-content {
+    flex: 7;
+    padding: 1vw;
+  }
+
+  .us-cmt-ago {
+    font-size: 1em;
+    line-height: 1.4em;
+    height: 1.4em;
+    flex: 1;
+    text-align: center;
+    display: block;
+    background-color: #ececec;
+  }
+}
