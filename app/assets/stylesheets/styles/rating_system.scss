@@ -1,5 +1,4 @@
-.star-border-only {
-  background-image: url('star_border_only.svg');
+.star {
   background-size: 25px 25px;
   background-repeat: no-repeat;
   display: block;
@@ -9,17 +8,29 @@
   float: left;
 }
 
-.star-filled {
+.star.border-only {
+  background-image: url('star_border_only.svg');
+}
+.star.filled {
   background-image: url('star_filled.svg');
 }
 
-.star-small {
-  background-image: url('star_filled.svg');
+.star.small {
   background-size: 18px 18px;
   background-repeat: no-repeat;
   display: block;
   width: 18px;
   height: 18px;
+  overflow: hidden;
+  float: left;
+}
+
+.star.super-small {
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 10px;
+  height: 10px;
   overflow: hidden;
   float: left;
 }

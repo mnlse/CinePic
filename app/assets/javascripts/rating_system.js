@@ -15,7 +15,7 @@ $.rating_system = function() {
   var sel = {
     dropdown: '.rate-movie-dropdown',
     cont: '#star-rating',
-    star: 'label.star-border-only',
+    star: 'label.star.border-only.interactive',
     radio: 'input.rating',
     num: '.rating-num',
     desc: '.rating-description',
@@ -23,7 +23,14 @@ $.rating_system = function() {
     btns: '.rating-dropdown-btns',
     saveBtn: '.rating-save',
     cancelBtn: '.rating-cancel'
-  }
+  };
+  var cls = {
+    star: 'star',
+    borderOnly: 'border-only',
+    filled: 'filled',
+    interactive: 'interactive',
+    hidden: 'hidden'
+  };
 
   var clickedRating = null;
   var initialRating = null;
@@ -32,27 +39,27 @@ $.rating_system = function() {
   // Highlights a star
   var addHL = function(number) {
     var hs = $(`${sel.cont} ${sel.star}`).eq(number - 1);
-    hs.addClass('star-filled');
-    hs.prevAll(sel.star).addClass('star-filled');
-    hs.nextAll(sel.star).removeClass('star-filled');
+    hs.addClass(cls.filled);
+    hs.prevAll(sel.star).addClass(cls.filled);
+    hs.nextAll(sel.star).removeClass(cls.filled);
     $(sel.num).text(number);
     $(sel.desc).text("(" + ratingDesc[number] + ")");
   };
 
   // Clears all highlights
   var clearHL = function() {
-    $(sel.star).removeClass('star-filled');
+    $(sel.star).removeClass(cls.filled);
   };
 
   // Hides textarea input, "thoughts" label
   var bottom = function(action) {
     if(action === "show" && bottomShown === false) {
-      $(sel.thoughts).removeClass("hidden");
-      $(sel.btns).removeClass("hidden");
+      $(sel.thoughts).removeClass(cls.hidden);
+      $(sel.btns).removeClass(cls.hidden);
       bottomShown = !bottomShown;
     } else if(action === "hide" && bottomShown === true) {
-      $(sel.thoughts).addClass("hidden");
-      $(sel.btns).addClass("hidden");
+      $(sel.thoughts).addClass(cls.hidden);
+      $(sel.btns).addClass(cls.hidden);
       bottomShown = !bottomShown;
     }
   };
@@ -61,7 +68,7 @@ $.rating_system = function() {
   var init = function() {
     $('input.rating').each(function() {
     var elemID = $(this).attr("id");
-    var label = $('<label class="star-border-only">');
+    var label = $('<label>').addClass(cls.star).addClass(cls.borderOnly).addClass(cls.interactive);
     label.attr("for", elemID);
     $(this).before(label);
     var checked = $(this).attr("checked");
@@ -92,12 +99,12 @@ $.rating_system = function() {
     if(clickedRating) {
       addHL(clickedRating);
     } else {
-      $('label.star-border-only').removeClass('star-filled');
+      $('label.star-border-only').removeClass(cls.filled);
     }
   });
 
   $(sel.cancelBtn).click(function() {
-    $(sel.dropdown).toggleClass("hidden");
+    $(sel.dropdown).toggleClass(cls.hidden);
     if(initialRating) {
       clearHL();
       addHL(initialRating);

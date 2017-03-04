@@ -48,8 +48,13 @@
                 <div class="us-mov-info">
                   <span class="us-mov-title"><%= link_to rated.mov_title, rated.mov_url %></span> <br>
                   <span class="us-mov-year"><%= rated.mov_year %></span> <br>
-                  <span class="us-mov-rating"><%= rated.rating %></span> <br>
-                  <span class="us-mov-ago"><%= time_ago_in_words(rated.rating_date) %>ago</span>
+                  <span class="us-mov-rating">
+                    <span style="float: left"><%= rated.rating %></span>
+                    <% rated.rating.times do %>
+                      <div class="star filled super-small"></div>
+                    <% end %>
+                  </span> <br>
+                  <span class="us-mov-ago"><%= time_ago_in_words(rated.rating_date) %> ago</span>
                 </div>
               </div>
               <span class="us-mov-thoughts"><%= rated.thoughts %></span>
