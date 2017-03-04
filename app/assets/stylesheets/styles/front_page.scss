@@ -17,7 +17,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("http://www.placehold.it/1920x762");
   background-size: 100% 100%;
   float: left;
   transition: all 0.3s ease;
@@ -66,24 +65,39 @@
   transform: rotateZ(45deg) scaleZ(2);
 } */
 
+@keyframes diamond-intro {
+  0% {
+    opacity: 0;
+    transform: scaleY(1) rotateZ(0deg);
+  }
+  10% {
+    opacity: 0.2;
+    transform: scaleY(1) rotateZ(0deg);
+  }
+  30% {
+    transform: scaleY(1) rotateZ(45deg);
+  }
+  100% {
+    transform: scaleY(2.5) rotateZ(45deg);
+  }
+}
+
 // Vertically stretched diamond for less horizontal mouse travel between left and right control divs
 .slideshow-click,
 .slideshow-click:hover {
   z-index: 20;
   display: block;
-  width: 10.5vw;
-  height: 10.5vw;
+  width: 10.8vw;
+  height: 10.8vw;
   border: 2px solid white;
   opacity: 0.2;
   position: absolute;
   top: 35%;
   left: 44.4%;
   transform: scaleY(2.5) rotateZ(45deg);
-  transition: border 0.5s;
-}
-.slideshow-click:active {
-  background-color: red;
-}
+  transition: all 0.5s;
+  animation: 700ms diamond-intro forwards;
+} 
 
 .main-page-header {
   font-weight: 700;

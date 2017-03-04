@@ -114,11 +114,10 @@ $.slideshow = function() {
     images[1].addClass(cls.rightSlide);
     images[2].addClass(cls.rightSlide);
 
-    $(el.prevSlide).css("cursor", cursor.impossible);
-
     maxPos = responseJSON.length - 1;
     maxLoadedPos = 2;
 
+    slideChanged();
     listenToActions();
     initSlidesRan = true;
   }
