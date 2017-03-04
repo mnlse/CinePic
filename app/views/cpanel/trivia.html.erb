@@ -1,5 +1,17 @@
 <div class="content cpanel-content">
   <%= render 'navigation' %>
   <div class="cpanel-display">
+    <div class="cp-trivia-cont">
+      <% @trivia.each do |tr| %>
+        <div class="cp-trivium">
+          <p>
+            <%= tr.content %>
+          </p>
+          <p>
+            Context: <%= tr.context %>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

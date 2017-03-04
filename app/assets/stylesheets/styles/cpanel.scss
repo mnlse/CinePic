@@ -39,16 +39,36 @@
 
 .cp-article {
   padding: 1vw;
+  margin: 1vw;
+  clear: both;
+}
+
+.cp-articles-cont {
+  clear: both;
 }
 
 .cp-art-thumbnail {
   width: 60px;
   height: 60px;
+  float: left;
 }
 
 .ctl-icons {
-  float: right;
   .ctl-icon {
-    width: 30px;
+    width: 18px;
   }
+}
+
+.ctl-icons.art-ctl {
+  margin-left: 65px;
+  background-color: white;
+  @include noselect;
+}
+.cp-ctl-icon {
+}
+.cp-article-info {
+}
+
+.cp-trivium {
+  padding: 1vw;
 }

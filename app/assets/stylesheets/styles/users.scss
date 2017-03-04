@@ -130,12 +130,12 @@
   }
 
   .us-cmt-ago {
+    align-self: stretch;
+    background-color: #ececec;
     font-size: 1em;
     line-height: 1.4em;
     height: 1.4em;
-    flex: 1;
+    flex: 1.5;
     text-align: center;
-    display: block;
-    background-color: #ececec;
   }
 }

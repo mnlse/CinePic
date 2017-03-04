@@ -49,7 +49,7 @@
                   <span class="us-mov-title"><%= link_to rated.mov_title, rated.mov_url %></span> <br>
                   <span class="us-mov-year"><%= rated.mov_year %></span> <br>
                   <span class="us-mov-rating"><%= rated.rating %></span> <br>
-                  <span class="us-mov-ago"><%= time_ago_in_words(rated.rating_date) %> ago</span>
+                  <span class="us-mov-ago"><%= time_ago_in_words(rated.rating_date) %>ago</span>
                 </div>
               </div>
               <span class="us-mov-thoughts"><%= rated.thoughts %></span>
@@ -92,7 +92,7 @@
         <div class="us-cmts-cont">
           <% @comments.each do |comment| %>
             <div class="us-cmt-cont">
-              <span class="us-cmt-content"><%= comment.content %></span> <span class="us-cmt-ago"><%= time_ago_in_words(comment.updated_at) %> ago</span>
+              <div class="us-cmt-content"><%= comment.content %></div> <div class="us-cmt-ago"><%= time_ago_in_words(comment.updated_at) %> ago</div>
             </div>
           <% end %>
         </div>

@@ -19,13 +19,19 @@ class CpanelController < ApplicationController
 
     articles_assoc.each do |art|
       obj = OpenStruct.new
+      obj.id = art.id
+      obj.url = article_path(art.id)
       obj.title = art.title
       obj.author = User.find_by_id(art.author)
       obj.author = @removed_user unless obj.author
       obj.thumbnail_url = art.thumbnail.url(:front_page)
+      obj.approved = art.approved
       @articles.push(obj)
     end
-    
+  end
+
+  def trivia
+    @trivia = Trivium.all
   end
 
   def getUser

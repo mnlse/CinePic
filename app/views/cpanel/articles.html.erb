@@ -4,12 +4,20 @@
     <div class="cp-articles-cont">
       <% @articles.each do |article| %>
         <div class="cp-article">
-          <%= image_tag article.thumbnail_url, class: "cp-art-thumbnail" %>
-          <%= article.title %>
-          <p>Username: <%= article.author.username %></p>
-          <div class="ctl-icons">
-            <%= image_tag asset_path("edit-icon.svg"), class: "ctl-icon" %>
-            <%= image_tag asset_path("delete-icon.svg"), class: "ctl-icon" %>
+          <%= link_to(image_tag(article.thumbnail_url, class: "cp-art-thumbnail"), article.url) %>
+          <div class="cp-article-info">
+            <p><%= link_to article.title, article.url %></p>
+            <p>Username: <%= article.author.username %></p>
+            <p>Approved: <%= article.approved %></p>
+          </div>
+          <div class="ctl-icons art-ctl">
+            <%= link_to(image_tag(asset_path("checkmark-icon.svg"), class: "ctl-icon cp-ctl-icon"), approve_article_path(article.id),
+                        data: { confirm: "This article will be approved to the front page. Are you sure?" }, 
+                        title: "Approve article") %>
+            <%= link_to(image_tag(asset_path("edit-icon.svg"), class: "ctl-icon cp-ctl-icon"), edit_article_path(article.id), 
+                        'data-no-turbolink': true, title: "Edit") %>
+            <%= link_to(image_tag(asset_path("delete-icon.svg"), class: "ctl-icon cp-ctl-icon"), article_path(article.id), 
+                        method: :delete, data: { confirm: "Are you sure?" }, title: "Remove") %>
           </div>
         </div>
       <% end %>
