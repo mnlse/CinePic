@@ -1,6 +1,7 @@
 <div class="content cpanel-content">
   <%= render 'navigation' %>
   <div class="cpanel-display">
+    <%= flash.notice %>
     <div class="cp-articles-cont">
       <% @articles.each do |article| %>
         <div class="cp-article">
@@ -11,9 +12,15 @@
             <p>Approved: <%= article.approved %></p>
           </div>
           <div class="ctl-icons art-ctl">
-            <%= link_to(image_tag(asset_path("checkmark-icon.svg"), class: "ctl-icon cp-ctl-icon"), approve_article_path(article.id),
-                        data: { confirm: "This article will be approved to the front page. Are you sure?" }, 
-                        title: "Approve article") %>
+            <% if article.approved %>
+              <%= link_to(image_tag(asset_path("disapprove-icon.svg"), class: "ctl-icon cp-ctl-icon"), disapprove_article_path(article.id),
+                          data: { confirm: "This article will be disapproved from the front page. Are you sure?" }, 
+                          title: "Disapprove article") %>
+            <% else %>
+              <%= link_to(image_tag(asset_path("checkmark-icon.svg"), class: "ctl-icon cp-ctl-icon"), approve_article_path(article.id),
+                          data: { confirm: "This article will be approved to the front page. Are you sure?" }, 
+                          title: "Approve article") %>
+            <% end %>
             <%= link_to(image_tag(asset_path("edit-icon.svg"), class: "ctl-icon cp-ctl-icon"), edit_article_path(article.id), 
                         'data-no-turbolink': true, title: "Edit") %>
             <%= link_to(image_tag(asset_path("delete-icon.svg"), class: "ctl-icon cp-ctl-icon"), article_path(article.id), 

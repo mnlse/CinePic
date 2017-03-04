@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-  get '/articles/approve/:id', to: 'article#approve', as: :approve_article
+  get '/articles/:id/approve/', to: 'articles#approve', as: :approve_article
+  get '/articles/:id/disapprove/', to: 'articles#disapprove', as: :disapprove_article
 
   resources :people
   resources :movies do

@@ -1,6 +1,6 @@
 class MainPagesController < ApplicationController
   def front_page
-    @articles = Article.last(4).reverse
+    @articles = Article.where(approved: true).last(4).reverse
     @movies = Movie.all
     @trivia = Trivium.where(context: 0).order("RANDOM()").first(2)
   end

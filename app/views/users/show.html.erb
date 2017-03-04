@@ -92,7 +92,7 @@
         <div class="us-cmts-cont">
           <% @comments.each do |comment| %>
             <div class="us-cmt-cont">
-              <div class="us-cmt-content"><%= comment.content %></div> <div class="us-cmt-ago"><%= time_ago_in_words(comment.updated_at) %> ago</div>
+              <div class="us-cmt-content"><%= link_to comment.content, article_path(comment.article_id) %></div> <div class="us-cmt-ago"><%= time_ago_in_words(comment.updated_at) %> ago</div>
             </div>
           <% end %>
         </div>

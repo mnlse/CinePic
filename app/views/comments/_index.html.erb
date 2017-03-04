@@ -1,6 +1,6 @@
 <% @comments.each do |comment| %>
   <div class="comment-cont">
     <p><%= comment.content %></p>
-    <p><%= get_user(comment) %></p>
+    <p><%= comment.user_id %></p>
   </div>
 <% end %>

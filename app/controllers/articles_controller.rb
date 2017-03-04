@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
+  include ControllersHelper
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, except: [:index]
+  before_action :verify_admin, only: [:approve, :disapprove]
 
   # GET /articles
   # GET /articles.json
@@ -65,6 +67,22 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def approve
+    @article.approved = true
+    if @article.save
+      flash[:notice] = "Article #{@article.id} has been approved."
+      redirect_to cpanel_articles_path
+    end
+  end
+
+  def disapprove
+    @article.approved = false
+    if @article.save
+      flash[:notice] = "Article #{@article.id} has been disapproved."
+      redirect_to cpanel_articles_path
     end
   end
 
