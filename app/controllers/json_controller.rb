@@ -13,7 +13,8 @@ class JsonController < ApplicationController
 
       msg.push({ 
         link_url: (destination_url.blank?) ? get_dest_url(destination_resource, destination_id) : destination_url,
-        pic_url: pic.picture.url(:default) })
+        pic_url: pic.picture.url(:default),
+        new_tab: (destination_url.blank?) ? false : true })
     end
 
     respond_to do |format|

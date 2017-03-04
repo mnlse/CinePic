@@ -39,6 +39,11 @@ $.slideshow = function() {
   var slideChanged = function() {
     var updateHref = function() {
       $(el.clickSlide).attr("href", responseJSON[currentPos].link_url);
+      if(responseJSON[currentPos].new_tab) {
+        $(el.clickSlide).attr("target", "_blank");
+      } else {
+        $(el.clickSlide).attr("target", "_self");
+      }
     };
 
     var dynamicImgLoader = function() {
