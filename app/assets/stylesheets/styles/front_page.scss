@@ -85,7 +85,7 @@
 // Vertically stretched diamond for less horizontal mouse travel between left and right control divs
 .slideshow-click,
 .slideshow-click:hover {
-  z-index: 20;
+  z-index: 1;
   display: block;
   width: 10.8vw;
   height: 10.8vw;
@@ -96,8 +96,9 @@
   left: 44.4%;
   transform: scaleY(2.5) rotateZ(45deg);
   transition: all 0.5s;
+  outline: none;
   animation: 700ms diamond-intro forwards;
-} 
+}
 
 .main-page-header {
   font-weight: 700;

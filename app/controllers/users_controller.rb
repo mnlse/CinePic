@@ -38,8 +38,6 @@ class UsersController < ApplicationController
       @articles.push(obj)
     end
 
-
-
     @comments = Comment.where(user_id: params[:id])
   end
 

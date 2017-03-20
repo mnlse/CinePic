@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    
+
     if @movie.save
       redirect_to movie_path(@movie)
     else
@@ -21,11 +21,11 @@ class MoviesController < ApplicationController
   end
 
   def show
-    if !current_user.nil?
-      @rating = Rating.where(user_id: current_user.id, movie_id: @movie.id).first
+    if user_signed_in?
+      @rating = Rating.find_by_user_and_movie(current_user.id, @movie.id)
       if @rating.nil?
         @rating = Rating.new
-        @rating.thoughts = "new"
+        @rating.thoughts = ""
       end
     else
       @rating = Rating.new
@@ -35,7 +35,7 @@ class MoviesController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @movie.update(movie_params)
       redirect_to @movie
@@ -64,9 +64,9 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:ratingcounter, :avgrating, :release_date, 
-                                  :title, :description, :cover_img, :actors, 
-                                  :genres, :writers, :runtime, :director, 
+    params.require(:movie).permit(:ratingcounter, :avgrating, :release_date,
+                                  :title, :description, :cover_img, :actors,
+                                  :genres, :writers, :runtime, :director,
                                   :yt_trailer_url)
   end
 end
